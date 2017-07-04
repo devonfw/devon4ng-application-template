@@ -1,0 +1,16 @@
+<td-layout-nav>
+  <div td-toolbar-content flex>
+    <app-header></app-header>
+  </div>
+  <td-layout-manage-list opened="true" mode="side" sidenavWidth="350px">
+
+    <md-nav-list td-sidenav-content>
+      <a md-list-item [routerLink]="['./initialPage']">
+        <md-icon md-list-avatar>home</md-icon>
+      </a>
+    </md-nav-list>
+
+    <router-outlet></router-outlet>
+
+  </td-layout-manage-list>
+</td-layout-nav>

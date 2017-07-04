@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+}
+
+.login-card-form {
+    width:100%;
+    margin-top:30px;
+    margin-left:2%;
+    margin-right:2%;
+  }
+
+.mat-toolbar {
+  background: darkcyan !important;
+}
+
+@media only screen and (min-width:770px) {
+  .login-card-form {
+    width:40%;
+    margin-top:30px;
+    margin-left:30%;
+    margin-right:30%;
+  }
+  .login-card-form-input {
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+  }
+}
+
+@media only screen and (max-width:1000px) and (min-width:550px) {
+  .login-card-form {
+    width:70%;
+    margin-top:30px;
+    margin-left:15%;
+    margin-right:15%;
+  }
+}
+
+.datatable.material.cell-selection .datatable-body-cell:hover, .datatable.material.cell-selection .datatable-body-cell:hover .datatable-row-group {
+     background-color: #fff; 
+    transition-property: background;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+}
+
+.datatable.material.cell-selection .datatable-body-cell:focus, .datatable.material.cell-selection .datatable-body-cell:focus .datatable-row-group {
+    background-color: #fff;
+}
+
+.home-datatable {
+    width:100%;
+    margin-left:0%;
+    margin-right:0%;
+  }
+
+@media only screen and (min-width:1100px) {
+  .home-datatable {
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+  }
+}
+
+.home-createedit {
+    width:100%;
+    margin-left:0%;
+    margin-right:0%;
+  }
+
+@media only screen and (min-width:770px) {
+  .home-createedit {
+    width:50%;
+    margin-left:25%;
+    margin-right:25%;
+  }
+}
+
+@media only screen and (max-width:1200px) and (min-width:550px) {
+  .home-createedit {
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+  }
+}
+
+.flag-icon {
+    line-height: 3em;
+    cursor:pointer;
+    width:100%;
+}
+
+#title-home {
+  box-shadow: none;
+  background: transparent;
+}
+
+.edit-create-dialog {
+  min-width: auto;
+}
+
+.details-sidenav {
+  width:53%;
+}
+
+.login-input {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+
+.login-button {
+  display: block;
+  margin: auto;
+}
+
+
+@media only screen and (min-width:800px) {
+  .edit-create-dialog {
+    min-width:600px;
+  }
+  .details-sidenav {
+    width:53%;
+  }
+  .login-input {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width:800px) and (min-width:666px) {
+  .edit-create-dialog {
+    min-width:500px;
+  }
+  .details-sidenav {
+    width:65%;
+  }
+  .login-input {
+    width: 73%;
+  }
+}
+
+@media only screen and (max-width:666px) and (min-width:600px) {
+  .edit-create-dialog {
+    min-width:400px;
+  }
+  .details-sidenav {
+    width:75%;
+  }
+  .login-input {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width:600px) and (min-width:550px) {
+  .edit-create-dialog {
+    min-width:400px;
+  }
+  .details-sidenav {
+    width:85%;
+  }
+  .login-input {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width:550px) {
+  .edit-create-dialog {
+    min-width:auto;
+  }
+  .details-sidenav {
+    width:90%;
+  }
+
+}
+
+

@@ -1,0 +1,1 @@
+export let url = "URL/TO/OASP4J/APPLICATION/SERVER"

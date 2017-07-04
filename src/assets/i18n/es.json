@@ -1,0 +1,24 @@
+{
+"buttons": {
+  "submit": "Enviar",
+  "close": "Cerrar",
+  "cancel": "CANCELAR",
+  "save": "GUARDAR",
+  "search": "BUSCAR",
+  "clean": "LIMPIAR",
+  "addItem": "Añadir fila",
+  "editItem": "Editar fila",
+  "deleteItem": "Eliminar fila"
+},
+  "header": {
+	"title": "Aplicación Angular",
+    "error": "Error de acceso"
+  },
+  "login": {
+    "title": "Acceso",
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "errorMsg": "Nombre de usuario o contraseña incorrectos"
+  },
+  "home": "Inicio"
+}
