@@ -68,16 +68,15 @@ If you have a previous version of this project you must update the node modules:
 
 Windows:
 ```bash
-$ rmdir /s node_modules
 $ rmdir /s dist
-$ yarn
+$ yarn upgrade
 $ yarn start
 ```
 
 Linux or macOS:
 ```bash
-$ rm -rf node_modules dist
-$ yarn
+$ rm -rf dist
+$ yarn upgrade
 $ yarn start
 ```
 
