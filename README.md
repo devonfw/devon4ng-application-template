@@ -1,12 +1,6 @@
-# Devonfw Angular 2 Kickstarter
+# OASP4JS Application Template
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
-
-**UPDATE:** 
-- Angular CLI has been updated to 1.0.0 version. 
-- This project has been updated to Angular 4.
-
-Please follow the upgrading instructions [at the end](https://github.com/devonfw/devonfw-angular2-kickstarter#update-the-project) of this README or in the [Introduction](https://github.com/devonfw/devonfw-angular2-kickstarter/wiki#upgrading-from-previous-versions) of the Wiki to upgrade this project. 
+This project was generated with [angular-cli](https://github.com/angular/angular-cli).
 
 ## Install the project
 
@@ -102,23 +96,4 @@ Linux or macOS:
 $ rm -rf node_modules dist
 $ npm install
 $ npm start
-```
-
-## Dockerize
-
-Inside of this project there are two files that contribute to its process of _Dockerization_: **Dockerfile** and **dockerize.sh**. The shell file has the options of:
-
-```bash
-$ npm install    # installs packages via npm
-$ ng build       # builds the application in a way that NGINX can serve it
-$ docker build   # builds a nginx-based docker image from the already built project
-$ docker push    # push the created image to your own repository in the Docker Hub (optional)
-$ docker run     # deploy the docker image into your Docker Machine (optional)
-```
-
-To use this option, you will have to execute this script from your `boot2docker` console. If you don't specify the name of your docker image ( `[docker_image_name` ) the name `devonfw-kickstarter` will be set by default-
-
-```bash
-$ cd /path/to/devonfw-angular2-kickstarter/docker
-$ ./dockerize.sh [docker_image_name]
 ```
