@@ -12,12 +12,21 @@ const appRoutes: Routes = [{
         component: HomeComponent,
         canActivate: [AuthGuard],
         children: [{
-                path: '', redirectTo: '/home/initialPage', pathMatch: 'full', canActivate: [AuthGuard],
+                path: '',
+				redirectTo: '/home/initialPage',
+				pathMatch: 'full',
+				canActivate: [AuthGuard]
             }, {
                 path: 'initialPage',
                 component: InitialPageComponent,
-                canActivate: [AuthGuard],
-            }]
+                canActivate: [AuthGuard]
+            }
+			//, {
+			//    path: 'etonamecomponentdataGrid',
+			//    component: EtonamecomponentDataGridComponent,
+			//    canActivate: [AuthGuard]
+			//}
+		]
     },{
         path: '**',
         redirectTo: '/login',
