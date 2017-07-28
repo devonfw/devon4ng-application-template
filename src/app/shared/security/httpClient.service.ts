@@ -31,7 +31,7 @@ export class HttpClient {
                     return observer.next(data);
                 }, (error: any) => {
                     if (error.status === 400 || error.status === 500) {
-                        this.auth.setLogged(false);;
+                        this.auth.setLogged(false);
                         this.headers.delete('x-csrf-token');
                         this.router.navigate(['/login']);
                     }
@@ -48,7 +48,7 @@ export class HttpClient {
                     return observer.next(res);
                 }, (error: any) => {
                     if (error.status === 400 || error.status === 500) {
-                        this.auth.setLogged(false);;
+                        this.auth.setLogged(false);
                         this.headers.delete('x-csrf-token');
                         this.router.navigate(['/login']);
                     }
@@ -65,7 +65,7 @@ export class HttpClient {
                     return observer.next(data);
                 }, (error: any) => {
                     if (error.status === 400 || error.status === 500) {
-                        this.auth.setLogged(false);;
+                        this.auth.setLogged(false);
                         this.headers.delete('x-csrf-token');
                         this.router.navigate(['/login']);
                     }
