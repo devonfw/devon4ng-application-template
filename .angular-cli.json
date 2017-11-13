@@ -19,8 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../src/assets/styles/styles.css",
-        "../src/assets/styles/material2-app-theme.scss",
+        "../src/assets/styles/material.scss",
+        "../src/assets/styles/styles.scss",
         "../node_modules/@covalent/core/common/platform.scss"
       ],
       "scripts": [],
@@ -53,6 +53,10 @@
     }
   },
   "defaults": {
-    "styleExt": "css"
+    "styleExt": "scss",
+    "serve": {
+      "port": 4200,
+      "host": "localhost"
+    }
   }
 }

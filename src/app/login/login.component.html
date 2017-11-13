@@ -2,7 +2,7 @@
   <div td-toolbar-content flex>
     <app-header></app-header>
   </div>
-  <td-layout-card-over [cardTitle]="'login.title' | translate" cardWidth="75">
+  <td-layout-card-over [cardTitle]="'login.title' | translate" cardWidth="50">
     <form layout="column" class="pad" (ngSubmit)="login(loginForm.form)" #loginForm="ngForm">
         <mat-form-field flex>
             <input matInput type="text" [placeholder]="'login.username' | translate" ngModel name="username" required>
