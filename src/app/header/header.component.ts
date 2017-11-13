@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { MdIconRegistry } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
-import { AuthService } from '../shared/security/auth.service';
+import { AuthService } from '../core/security/auth.service';
 import { HeaderService } from './shared/header.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -14,12 +12,8 @@ export class HeaderComponent {
 
     constructor (
         private translate: TranslateService,
-        private iconReg: MdIconRegistry,
         private auth: AuthService,
-        private sanitizer: DomSanitizer,
-        private headerService: HeaderService) {
-            iconReg.addSvgIcon('logo', sanitizer.bypassSecurityTrustResourceUrl('assets/img/Logo.svg'))
-    }
+        private headerService: HeaderService) {}
 
     toggleLanguage(option) {
         this.translate.use(option);

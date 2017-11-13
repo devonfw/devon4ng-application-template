@@ -1,15 +1,15 @@
 import { Router } from '@angular/router';
 import { Injectable }     from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
-import { AuthService } from '../../shared/security/auth.service';
-import { HttpClient } from '../../shared/security/httpClient.service';
-import { BusinessOperations } from '../../BusinessOperations';
+import { AuthService } from 'app/core/security/auth.service';
+import { BusinessOperationsService } from 'app/core/shared/business-operations.service';
 
 @Injectable()
 export class LoginService {
 
     constructor(public router: Router,
-                private BO: BusinessOperations,
+                private BO: BusinessOperationsService,
                 private http: HttpClient,
                 public authService: AuthService) { }
 
@@ -17,9 +17,8 @@ export class LoginService {
         this.http.post(this.BO.login(), JSON.stringify({j_username: username, j_password: password}))
             .map(res => JSON.stringify(res))
             .subscribe((res: any) => {
-                this.http.get(this.BO.getCsrf())
-                    .map(result => result.json())
-                    .subscribe( (data) => {
+                this.http.get<any>(this.BO.getCsrf())
+                    .subscribe((data) => {
                         this.authService.setToken(data.token);
                         this.authService.setLogged(true);
                         this.router.navigate(['/home']);

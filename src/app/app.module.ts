@@ -7,43 +7,39 @@ import { HeaderComponent } from './header/header.component';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 
 // modules
-import { routing } from './app.routing';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { CovalentModule } from './shared/covalent.module';
-import { HttpModule, Http} from '@angular/http';
+import { CoreModule } from './core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 
 // services
-import { BusinessOperations } from './BusinessOperations';
-import { HttpClient } from './shared/security/httpClient.service';
 import { LoginService } from './login/shared/login.service';
-import { AuthService } from './shared/security/auth.service';
+import { AuthService } from './core/security/auth.service';
 import { HeaderService } from './header/shared/header.service';
-import { AuthGuard } from './shared/security/auth-guard.service';
+import { AuthGuard } from './core/security/auth-guard.service';
 
-export function translateFactory(http: Http) {
+export function translateFactory(http: HttpClient) {
     return  new TranslateHttpLoader(http);
 }
 @NgModule({
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        CovalentModule,
+        CoreModule,
         FormsModule,
-        HttpModule,
-        routing,
-        MaterialModule,
+        HttpClientModule,
+        AppRoutingModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: translateFactory,
-                deps: [Http]
+                deps: [HttpClient]
             }
         })
     ],
@@ -57,13 +53,6 @@ export function translateFactory(http: Http) {
     bootstrap: [
         AppComponent
     ],
-    providers: [
-        HttpClient,
-        AuthGuard,
-        LoginService,
-        HeaderService,
-        AuthService,
-        BusinessOperations
-    ]
+    providers: []
 })
 export class AppModule {}

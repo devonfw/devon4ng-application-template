@@ -1,15 +1,14 @@
 import { Observable } from 'rxjs/Rx';
-import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { url } from '../assets/serverPath';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class BusinessOperations {
+export class BusinessOperationsService {
 
-    public serverPath = url;
+    public serverPath = environment.restServiceRoot;
     public servicesPath = this.serverPath;
 
-    constructor(private http: Http) { }
+    constructor() { }
 
     login() {
         return this.serverPath + 'login';
