@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
-import {
-  HttpClientModule,
-  HTTP_INTERCEPTORS,
-} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
@@ -62,6 +60,7 @@ import { BusinessOperationsService } from 'app/core/shared/business-operations.s
 @NgModule({
   imports: [
     HttpClientModule,
+    HttpModule,
     RouterModule,
     BrowserAnimationsModule,
   ],
@@ -118,12 +117,4 @@ import { BusinessOperationsService } from 'app/core/shared/business-operations.s
   ],
 })
 
-export class CoreModule {
-  constructor(iconReg: MatIconRegistry,
-              sanitizer: DomSanitizer) {
-    iconReg.addSvgIcon(
-      'logo',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/Logo.svg')
-    )
-  }
-}
+export class CoreModule {}

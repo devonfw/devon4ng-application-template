@@ -13,7 +13,7 @@
         <span class="flag-icon flag-icon-es" *ngIf = "isCurrentLang('es')" (click)="toggleLanguage('es')"></span>
     </mat-menu>
 
-    <button mat-icon-button *ngIf="auth.isLogged()" (click)="logout()">
+    <button mat-icon-button *ngIf="isLogged()" (click)="logout()">
         <mat-icon>exit_to_app</mat-icon>
     </button>
 </div>

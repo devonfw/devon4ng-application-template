@@ -9,7 +9,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class HeaderComponent {
-
     constructor (
         private translate: TranslateService,
         private auth: AuthService,
@@ -21,6 +20,10 @@ export class HeaderComponent {
 
     isCurrentLang(lang) {
         return this.translate.currentLang !== lang;
+    }
+
+    isLogged(): boolean {
+        return this.auth.isLogged() || false;
     }
 
     logout() {

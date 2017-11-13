@@ -9,7 +9,7 @@ export class AuthService {
     constructor(public router: Router) { }
 
     public isLogged(): boolean {
-        return this.logged;
+        return this.logged || false;
     }
 
     public setLogged(login: boolean): void {
