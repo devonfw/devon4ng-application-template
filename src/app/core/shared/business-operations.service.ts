@@ -6,7 +6,7 @@ import { environment } from '../../../environments/environment';
 export class BusinessOperationsService {
 
     public serverPath = environment.restServiceRoot;
-    public servicesPath = this.serverPath;
+    public restPath = environment.restPathRoot;
 
     constructor() { }
 

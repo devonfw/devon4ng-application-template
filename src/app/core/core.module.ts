@@ -108,12 +108,12 @@ import { BusinessOperationsService } from 'app/core/shared/business-operations.s
   ],
   declarations: [],
   providers: [
-    HttpRequestInterceptorService,
     AuthGuard,
     LoginService,
     HeaderService,
     AuthService,
     BusinessOperationsService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptorService, multi: true },
   ],
 })
 

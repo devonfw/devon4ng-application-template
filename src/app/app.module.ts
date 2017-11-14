@@ -18,12 +18,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 
-// services
-import { LoginService } from './login/shared/login.service';
-import { AuthService } from './core/security/auth.service';
-import { HeaderService } from './header/shared/header.service';
-import { AuthGuard } from './core/security/auth-guard.service';
-
 export function translateFactory(http: HttpClient) {
     return  new TranslateHttpLoader(http);
 }
