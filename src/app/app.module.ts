@@ -1,4 +1,7 @@
 // Components
+import { Router } from '@angular/router';
+import { HttpRequestInterceptorService } from './core/security/httpRequestInterceptor.service';
+import { CookieXSRFStrategy, XSRFStrategy } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -7,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 
 // modules
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';

@@ -11,24 +11,24 @@ import { LoginService } from './shared/login.service';
 
 export class LoginComponent {
 
-    constructor (
+    constructor(
         private translate: TranslateService,
         private _dialogService: TdDialogService,
         private loginService: LoginService,
         public authService: AuthService,
-        private router: Router) {}
+        private router: Router) { }
 
     login(login) {
         this.loginService.login(login.value.username, login.value.password)
-            .subscribe(() => {
-                this.loginService.getCsrf()
-                    .subscribe((data) => {
-                        this.authService.setToken(data.token);
-                        this.authService.setLogged(true);
-                        this.router.navigate(['/home']);
-                    });
-            }, (err: any) => {
-                this.authService.setLogged(false);
-            });
+        .subscribe(() => {
+            this.authService.setLogged(true);
+            this.router.navigate(['/home']);
+            // this.loginService.getCsrf()
+            //     .subscribe((data) => {
+            //         this.authService.setToken(data.token);
+            //     });
+        }, (err: any) => {
+            this.authService.setLogged(false);
+        });
     }
 }

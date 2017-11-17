@@ -12,18 +12,12 @@ export class LoginService {
                 private http: HttpClient) { }
 
     login(username: string, password: string): Observable<any> {
-        return this.http.post(this.BO.login(),
-            {
-                j_username: username,
-                j_password: password
-            },
-            {
-                headers: new HttpHeaders().set('Content-Type', 'application/json'),
-                responseType: 'text'
-            });
+        // tslint:disable-next-line:max-line-length
+        return this.http.post(this.BO.login(), {j_username: username, j_password: password});
     }
 
     getCsrf(): Observable<any> {
-        return this.http.get<any>(this.BO.getCsrf());
+        return this.http.get(this.BO.getCsrf());
+
     }
 }
