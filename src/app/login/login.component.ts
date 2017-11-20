@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
+
 import { TranslateService } from '@ngx-translate/core';
 import { TdDialogService } from '@covalent/core/dialogs/services/dialog.service';
 import { AuthService } from 'app/core/security/auth.service';
@@ -16,7 +18,9 @@ export class LoginComponent {
         private _dialogService: TdDialogService,
         private loginService: LoginService,
         public authService: AuthService,
-        private router: Router) { }
+        private router: Router,
+        public snackBar: MatSnackBar
+    ) { }
 
     login(login) {
         this.loginService.login(login.value.username, login.value.password)
@@ -29,6 +33,11 @@ export class LoginComponent {
             //     });
         }, (err: any) => {
             this.authService.setLogged(false);
+            this.translate.get('login.errorMsg').subscribe((res: string) => {
+                this.snackBar.open(res, 'OK', {
+                    duration: 5000,
+                });
+            });
         });
     }
 }
