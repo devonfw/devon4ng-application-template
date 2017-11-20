@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { HttpClient } from '@angular/common/http';
@@ -8,18 +7,10 @@ import { BusinessOperationsService } from 'app/core/shared/business-operations.s
 @Injectable()
 export class HeaderService {
 
-    constructor(public router: Router,
-                private BO: BusinessOperationsService,
-                private http: HttpClient,
-                public authService: AuthService) { }
+    constructor(private BO: BusinessOperationsService,
+                private http: HttpClient,) { }
 
     logout() {
-        this.http
-            .get(this.BO.logout())
-            .subscribe( () => {
-                this.authService.setLogged(false);
-                this.authService.setToken('');
-                this.router.navigate(['/login']);
-            })
+        return this.http.get(this.BO.logout());
     }
 }

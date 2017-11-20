@@ -6,4 +6,12 @@ import { Router } from '@angular/router';
     templateUrl: './home.component.html',
 })
 
-export class HomeComponent {}
+export class HomeComponent {
+
+    constructor(private router: Router) {}
+
+    navigateTo(route: string): void {
+        this.router.navigate([route]);
+    }
+
+}

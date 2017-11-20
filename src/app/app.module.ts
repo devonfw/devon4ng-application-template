@@ -1,4 +1,6 @@
 // Components
+import { HomeModule } from './home/home.module';
+import { HeaderModule } from './header/header.module';
 import { Router } from '@angular/router';
 import { HttpRequestInterceptorService } from './core/security/httpRequestInterceptor.service';
 import { CookieXSRFStrategy, XSRFStrategy } from '@angular/http';
@@ -30,6 +32,8 @@ export function translateFactory(http: HttpClient) {
         BrowserAnimationsModule,
         CoreModule,
         FormsModule,
+        HeaderModule,
+        HomeModule,
         HttpClientModule,
         AppRoutingModule,
         TranslateModule.forRoot({
@@ -43,8 +47,6 @@ export function translateFactory(http: HttpClient) {
     declarations: [
         AppComponent,
         LoginComponent,
-        HomeComponent,
-        HeaderComponent,
         InitialPageComponent
     ],
     bootstrap: [

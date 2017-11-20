@@ -1,25 +1,23 @@
-<div layout="row" style="align-items: center" flex>
+<div layout="row" layout-align="center center" style="align-items: center" flex>
     <mat-icon class="mat-icon-logo" svgIcon="logo"></mat-icon>
     <span>{{'header.title' | translate}}</span>
 
     <span flex></span>
-
-    <button mat-icon-button [mat-menu-trigger-for]="menu">
+    
+    <a mat-icon-button [mat-menu-trigger-for]="menu">
+        <mat-icon *ngIf = "isCurrentLang('es')" class="flag-icon flag-icon-gb"></mat-icon>
+        <mat-icon *ngIf = "isCurrentLang('en')" class="flag-icon flag-icon-es"></mat-icon>
         <mat-icon>language</mat-icon>
-    </button>
+    </a>
 
     <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngIf="isCurrentLang('en')" (click)="toggleLanguage('en')">
-            <span class="flag-icon flag-icon-gb"></span>
-            {{'header.EN' | translate}}
-        </button>
-        <button mat-menu-item *ngIf="isCurrentLang('es')" (click)="toggleLanguage('es')">
-            <span class="flag-icon flag-icon-es"></span>
-            {{'header.ES' | translate}}
-        </button>
+        <button mat-menu-item  *ngIf = "isCurrentLang('en')" (click)="toggleLanguage('en')"><mat-icon class="flag-icon flag-icon-gb"></mat-icon><span> English </span></button>
+        <button mat-menu-item  *ngIf = "isCurrentLang('es')" (click)="toggleLanguage('es')"><mat-icon class="flag-icon flag-icon-es"></mat-icon><span> Castellano </span></button>
     </mat-menu>
 
-    <button mat-icon-button *ngIf="isLogged()" (click)="logout()">
-        <mat-icon>exit_to_app</mat-icon>
-    </button>
+    <span flex>
+        <button mat-icon-button *ngIf="isLogged()" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </span>
 </div>
