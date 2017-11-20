@@ -9,8 +9,14 @@
     </button>
 
     <mat-menu #menu="matMenu">
-        <span class="flag-icon flag-icon-gb" *ngIf = "isCurrentLang('en')" (click)="toggleLanguage('en')" style="margin-bottom:10px"></span>
-        <span class="flag-icon flag-icon-es" *ngIf = "isCurrentLang('es')" (click)="toggleLanguage('es')"></span>
+        <button mat-menu-item *ngIf="isCurrentLang('en')" (click)="toggleLanguage('en')">
+            <span class="flag-icon flag-icon-gb"></span>
+            {{'header.EN' | translate}}
+        </button>
+        <button mat-menu-item *ngIf="isCurrentLang('es')" (click)="toggleLanguage('es')">
+            <span class="flag-icon flag-icon-es"></span>
+            {{'header.ES' | translate}}
+        </button>
     </mat-menu>
 
     <button mat-icon-button *ngIf="isLogged()" (click)="logout()">

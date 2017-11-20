@@ -1,18 +1,20 @@
 {
-"buttons": {
-  "submit": "Enviar",
-  "close": "Cerrar",
-  "cancel": "CANCELAR",
-  "save": "GUARDAR",
-  "search": "BUSCAR",
-  "clean": "LIMPIAR",
-  "addItem": "Añadir fila",
-  "editItem": "Editar fila",
-  "deleteItem": "Eliminar fila"
-},
+  "buttons": {
+    "submit": "Enviar",
+    "close": "Cerrar",
+    "cancel": "CANCELAR",
+    "save": "GUARDAR",
+    "search": "BUSCAR",
+    "clean": "LIMPIAR",
+    "addItem": "Añadir fila",
+    "editItem": "Editar fila",
+    "deleteItem": "Eliminar fila"
+  },
   "header": {
-	"title": "Aplicación Angular",
-    "error": "Error de acceso"
+    "title": "Aplicación Angular",
+    "error": "Error de acceso",
+    "EN": "Inglés",
+    "ES": "Español"
   },
   "login": {
     "title": "Acceso",
