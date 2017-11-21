@@ -1,20 +1,22 @@
-<td-layout>
-  <div class="home-title" flex>
-    <div layout="column" class="property-text-center">
-      <h1 class= "title-color title">MY THAI STAR</h1>
-      <span class= "title-color pull-top-xl subtitle">More than just delicious food</span>
-    </div>
-  </div>
+<td-layout-nav>
+  <app-header td-toolbar-content flex></app-header>
   <td-layout-manage-list opened="true" mode="side" sidenavWidth="350px">
-
-    <mat-nav-list td-sidenav-content>
-      <a id="home" mat-list-item [routerLink]="['./initialPage']">
-        <mat-icon mat-list-avatar>home</mat-icon>
-		<h3 mat-line> {{'home' | translate}} </h3>
-      </a>
-    </mat-nav-list>
-
+    <div td-sidenav-content>
+      <mat-nav-list td-sidenav-content>
+        <a id="home" mat-list-item [routerLink]="['./initialPage']">
+          <mat-icon matListAvatar>home</mat-icon>
+          <h3 matLine>{{'home' | translate}}</h3>
+          <p matLine>{{'description' | translate}}</p>
+        </a>
+      </mat-nav-list>
+    </div>
     <router-outlet></router-outlet>
-
+    <td-layout-footer-inner>
+      <div layout="row" layout-align="center center" flex>
+        <span>DevonFW Application</span>
+        <span flex></span>
+        <span>Devonfw</span>
+      </div>
+    </td-layout-footer-inner>
   </td-layout-manage-list>
-</td-layout>
+</td-layout-nav>

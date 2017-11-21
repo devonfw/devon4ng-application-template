@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from '../app-routing.module';
 
-import { HeaderComponent } from './header.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [
@@ -23,4 +23,4 @@ import { HeaderComponent } from './header.component';
     HeaderComponent,
   ],
 })
-export class HeaderModule { }
+export class LayoutModule { }

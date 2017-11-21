@@ -22,5 +22,10 @@
     "password": "Contraseña",
     "errorMsg": "Nombre de usuario o contraseña incorrectos"
   },
-  "home": "Inicio"
+  "home": "Inicio",
+  "description": "Descripción",
+  "example": "Ejemplo",
+  "example description": "Descripción de Ejemplo",
+  "LIKE": "ME GUSTA",
+  "SHARE": "COMPARTIR"
 }

@@ -11,9 +11,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 export class AppComponent {
   constructor(private router: Router,
-      private translate: TranslateService,
-      private iconReg: MatIconRegistry,
-      private sanitizer: DomSanitizer) {
+    private translate: TranslateService,
+    private iconReg: MatIconRegistry,
+    private sanitizer: DomSanitizer) {
     // NGX Translate
     translate.setDefaultLang('en');
     translate.use('en');
@@ -21,6 +21,6 @@ export class AppComponent {
     iconReg.addSvgIcon(
       'logo',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/Logo.svg')
-    )
+    );
   }
 }

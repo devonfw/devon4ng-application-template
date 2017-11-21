@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { AuthService } from '../core/security/auth.service';
+import { AuthService } from '../../core/security/auth.service';
 import { HeaderService } from './shared/header.service';
 import { TranslateService } from '@ngx-translate/core';
 

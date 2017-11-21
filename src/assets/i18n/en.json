@@ -22,5 +22,10 @@
     "password": "Password",
     "errorMsg": "Wrong username or password"
   },
-  "home": "Home"
+  "home": "Home",
+  "description": "Description",
+  "example": "Example",
+  "example description": "Example Description",
+  "LIKE": "LIKE",
+  "SHARE": "SHARE"
 }

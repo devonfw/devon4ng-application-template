@@ -50,12 +50,14 @@ import { CovalentChipsModule,
   CovalentNotificationsModule,
   CovalentCommonModule,
 } from '@covalent/core';
-import { HttpRequestInterceptorService } from 'app/core/security/httpRequestInterceptor.service';
-import { AuthGuard } from 'app/core/security/auth-guard.service';
-import { LoginService } from 'app/login/shared/login.service';
-import { HeaderService } from 'app/header/shared/header.service';
-import { AuthService } from 'app/core/security/auth.service';
-import { BusinessOperationsService } from 'app/core/shared/business-operations.service';
+import 'hammerjs';
+
+import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
+import { AuthGuard } from './security/auth-guard.service';
+import { LoginService } from '../login/shared/login.service';
+import { HeaderService } from '../layout/header/shared/header.service';
+import { AuthService } from './security/auth.service';
+import { BusinessOperationsService } from './shared/business-operations.service';
 
 @NgModule({
   imports: [
@@ -110,8 +112,8 @@ import { BusinessOperationsService } from 'app/core/shared/business-operations.s
   providers: [
     AuthGuard,
     LoginService,
-    HeaderService,
     AuthService,
+    HeaderService,
     BusinessOperationsService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptorService, multi: true },
   ],

@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material';
 
 import { TranslateService } from '@ngx-translate/core';
 import { TdDialogService } from '@covalent/core/dialogs/services/dialog.service';
-import { AuthService } from 'app/core/security/auth.service';
+import { AuthService } from '../core/security/auth.service';
 import { LoginService } from './shared/login.service';
 
 @Component({
