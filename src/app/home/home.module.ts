@@ -16,8 +16,7 @@ import { InitialPageComponent } from './initial-page/initial-page.component';
     AppRoutingModule,
     TranslateModule,
   ],
-  providers: [
-  ],
+  providers: [],
   declarations: [
     HomeComponent,
     InitialPageComponent,

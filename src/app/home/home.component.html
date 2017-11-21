@@ -1,9 +1,12 @@
 <td-layout-nav>
-  <app-header td-toolbar-content flex></app-header>
-  <td-layout-manage-list opened="true" mode="side" sidenavWidth="350px">
+  <app-header (toggle)="onToggle($event)" [sideNavOpened]="sideNavOpened" td-toolbar-content flex></app-header>
+  <td-layout-manage-list
+    [opened]="(media.registerQuery('gt-sm') | async) || sideNavOpened"
+    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '280px' : '100%'">
     <div td-sidenav-content>
       <mat-nav-list td-sidenav-content>
-        <a id="home" mat-list-item [routerLink]="['./initialPage']">
+        <a id="home" mat-list-item [routerLink]="['./initialPage']" (click)="close()">
           <mat-icon matListAvatar>home</mat-icon>
           <h3 matLine>{{'home' | translate}}</h3>
           <p matLine>{{'description' | translate}}</p>

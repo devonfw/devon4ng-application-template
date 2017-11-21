@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { AuthService } from '../../core/security/auth.service';
 import { HeaderService } from './shared/header.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,10 +11,18 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class HeaderComponent {
+    @Input() sideNavOpened = false;
+    @Output() toggle: EventEmitter<any> = new EventEmitter();
+
     constructor (public router: Router,
                 private translate: TranslateService,
                 private auth: AuthService,
                 private headerService: HeaderService) {}
+
+    toggleSideNav() {
+        this.sideNavOpened = !this.sideNavOpened;
+        this.toggle.emit(this.sideNavOpened);
+    }
 
     toggleLanguage(option) {
         this.translate.use(option);

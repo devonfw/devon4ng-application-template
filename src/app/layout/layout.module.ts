@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
 
 import { HeaderComponent } from './header/header.component';
+import { TdMediaService } from '@covalent/core';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
     TranslateModule,
   ],
   providers: [
+    TdMediaService
   ],
   declarations: [
     HeaderComponent,

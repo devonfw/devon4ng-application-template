@@ -1,14 +1,16 @@
 <div layout="row" layout-align="start center" flex>
-  <mat-icon class="mat-icon-logo cursor-pointer" svgIcon="logo"></mat-icon>
+  <mat-icon class="mat-icon-logo cursor-pointer" svgIcon="logo" hide-xs></mat-icon>
+  <button mat-icon-button *ngIf="isLogged()" (click)="toggleSideNav()" hide-gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
   <span class="cursor-pointer">{{'header.title' | translate}}</span>
 
   <span flex></span>
 
-  <span class="pad-right">
+  <span class="pad-right-sm">
     <a mat-icon-button [mat-menu-trigger-for]="menu">
       <mat-icon *ngIf="isCurrentLang('en')" class="flag-icon flag-icon-es"></mat-icon>
       <mat-icon *ngIf="isCurrentLang('es')" class="flag-icon flag-icon-gb"></mat-icon>
-      <mat-icon>language</mat-icon>
     </a>
     <mat-menu #menu="matMenu">
       <button mat-menu-item *ngIf="isCurrentLang('en')" (click)="toggleLanguage('en')">

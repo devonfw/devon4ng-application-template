@@ -4,7 +4,7 @@ import { BusinessOperationsService } from '../../../core/shared/business-operati
 
 @Injectable()
 export class HeaderService {
-
+    opened: boolean;
     constructor(private BO: BusinessOperationsService,
                 private http: HttpClient) { }
 
