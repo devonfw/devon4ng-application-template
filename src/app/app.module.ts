@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { LayoutModule } from './layout/layout.module';
+import { HomeModule } from './home/home.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +27,7 @@ export function translateFactory(http: HttpClient) {
     BrowserAnimationsModule,
     LayoutModule,
     CoreModule,
+	HomeModule,
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
