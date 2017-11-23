@@ -27,7 +27,7 @@ export function translateFactory(http: HttpClient) {
     BrowserAnimationsModule,
     LayoutModule,
     CoreModule,
-	HomeModule,
+    HomeModule,
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
