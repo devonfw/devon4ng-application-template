@@ -27,5 +27,31 @@
   "example": "Example",
   "example description": "Example Description",
   "LIKE": "LIKE",
-  "SHARE": "SHARE"
+  "SHARE": "SHARE",
+  "CLOSE": "CLOSE",
+  "sampledatamanagement": {
+    "title": "SampleData_EN_Grid",
+    "subtitle": "SampleData_EN_Description",
+    "addTitle": "Add new item",        
+    "editTitle": "Edit item",
+    "searchTip": "Search Panel",
+    "sortTip": "Clear Sorting",
+    "alert": {
+      "acceptBtn": "Yes, Delete",
+      "cancelBtn": "No, Cancel",
+      "title": "Confirm",
+      "message": "Are you sure you want to delete this item?"
+    },
+    "SampleData": {
+      "navData": "SampleData_EN",
+      "navDataSub": "SampleData_EN",
+      "navDataSubDescription": "SampleData_EN_Description",
+      "columns": {
+        "mail": "Mail_EN",
+        "surname": "Surname_EN",
+        "name": "Name_EN",
+        "age": "Age_EN"
+      }
+    }
+  }
 }

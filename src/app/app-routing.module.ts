@@ -6,6 +6,7 @@ import { AuthGuard } from './core/security/auth-guard.service';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { InitialPageComponent } from './home/initial-page/initial-page.component';
+import { SampleDataGridComponent } from './sample-data/sample-data-grid/sample-data-grid.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +24,11 @@ const routes: Routes = [
       component: InitialPageComponent,
       canActivate: [AuthGuard]
     },
+    {
+      path: 'sampleData',
+      component: SampleDataGridComponent,
+      canActivate: [AuthGuard]
+    }
       // {
       //    path: 'etonamecomponentdataGrid',
       //    component: EtonamecomponentDataGridComponent,

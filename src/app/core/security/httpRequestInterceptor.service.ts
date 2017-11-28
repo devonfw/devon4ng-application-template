@@ -38,7 +38,7 @@ export class HttpRequestInterceptorService implements HttpInterceptor {
             const authReq: HttpRequest<any> = req.clone({withCredentials: true, headers: this.headers});
 
             next.handle(authReq).subscribe((data: any) => {
-                    console.log(data)
+                    console.log(data);
                     return Observable.of(data);
                 }, (error: any) => {
                     if (error.status === 400 || error.status === 500) {
@@ -49,21 +49,7 @@ export class HttpRequestInterceptorService implements HttpInterceptor {
                     return Observable.throw(error);
             });
         } else {
-                return next.handle(req)
-                    .catch((err: HttpErrorResponse) => {
-                        if (err.status >= 200 && err.status < 300) {
-                            const res = new HttpResponse({
-                                body: null,
-                                headers: err.headers,
-                                status: err.status,
-                                statusText: err.statusText,
-                                url: err.url
-                            });
-                            return Observable.of(res);
-                        } else {
-                            return Observable.throw(err);
-                        }
-                    });
+            return next.handle(req);
         }
     }
 }

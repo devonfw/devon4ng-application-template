@@ -1,23 +1,27 @@
 import { Router } from '@angular/router';
-import { Injectable }     from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
-import { BusinessOperationsService } from 'app/core/shared/business-operations.service';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+
+import { BusinessOperationsService } from '../../core/shared/business-operations.service';
 
 @Injectable()
 export class LoginService {
 
     constructor(public router: Router,
                 private BO: BusinessOperationsService,
-                private http: HttpClient) { }
+                private http: Http,
+                private httpClient: HttpClient) { }
 
     login(username: string, password: string): Observable<any> {
-        // tslint:disable-next-line:max-line-length
-        return this.http.post(this.BO.login(), {j_username: username, j_password: password});
+        return this.http.post(this.BO.login(),
+            { j_username: username, j_password: password },
+            { withCredentials: true }
+        );
     }
 
     getCsrf(): Observable<any> {
-        return this.http.get(this.BO.getCsrf());
-
+        return this.httpClient.get(this.BO.getCsrf());
     }
 }

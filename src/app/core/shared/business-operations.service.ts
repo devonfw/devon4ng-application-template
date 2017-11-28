@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
@@ -11,7 +10,7 @@ export class BusinessOperationsService {
     constructor() { }
 
     login() {
-        return this.serverPath + 'login';
+        return this.restPath + 'login';
     }
     logout() {
         return this.serverPath + 'logout';

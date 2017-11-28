@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -50,6 +50,8 @@ import { CovalentChipsModule,
   CovalentNotificationsModule,
   CovalentCommonModule,
 } from '@covalent/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import 'hammerjs';
 
 import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
@@ -59,12 +61,22 @@ import { HeaderService } from '../layout/header/shared/header.service';
 import { AuthService } from './security/auth.service';
 import { BusinessOperationsService } from './shared/business-operations.service';
 
+export function translateFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   imports: [
-    HttpClientModule,
     HttpModule,
+    HttpClientModule,
     RouterModule,
     BrowserAnimationsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: translateFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   exports: [
     CommonModule,
@@ -107,6 +119,7 @@ import { BusinessOperationsService } from './shared/business-operations.service'
     CovalentNotificationsModule,
     CovalentCommonModule,
     CovalentDialogsModule,
+    TranslateModule,
   ],
   declarations: [],
   providers: [
