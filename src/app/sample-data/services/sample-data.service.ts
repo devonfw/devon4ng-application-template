@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class SampleDataDataGridService {
-  private urlService = environment.restServiceRoot + 'sampledata/';
+  private urlService = environment.restServiceRoot + 'sampledatamanagement/v1/sampledata/';
 
   constructor(private http: HttpClient) {}
 

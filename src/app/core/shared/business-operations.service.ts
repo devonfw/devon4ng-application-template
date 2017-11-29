@@ -10,7 +10,7 @@ export class BusinessOperationsService {
     constructor() { }
 
     login() {
-        return this.restPath + 'login';
+        return this.serverPath + 'login';
     }
     logout() {
         return this.serverPath + 'logout';
