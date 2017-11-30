@@ -29,6 +29,7 @@
   "LIKE": "LIKE",
   "SHARE": "SHARE",
   "CLOSE": "CLOSE",
+  "ERROR": "ERROR",    
   "sampledatamanagement": {
     "title": "SampleData_EN_Grid",
     "subtitle": "SampleData_EN_Description",

@@ -2,8 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
+import {
+  HttpClientModule,
+  HttpClientXsrfModule,
+  HTTP_INTERCEPTORS,
+  HttpClient
+} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
@@ -56,18 +60,17 @@ import 'hammerjs';
 
 import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
 import { AuthGuard } from './security/auth-guard.service';
-import { LoginService } from '../login/shared/login.service';
-import { HeaderService } from '../layout/header/shared/header.service';
 import { AuthService } from './security/auth.service';
 import { BusinessOperationsService } from './shared/business-operations.service';
+import { LoginService } from './security/login.service';
 
 export function translateFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 @NgModule({
   imports: [
-    HttpModule,
     HttpClientModule,
+    HttpClientXsrfModule,
     RouterModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
@@ -126,7 +129,6 @@ export function translateFactory(http: HttpClient) {
     AuthGuard,
     LoginService,
     AuthService,
-    HeaderService,
     BusinessOperationsService,
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptorService, multi: true },
   ],

@@ -29,6 +29,7 @@
   "LIKE": "ME GUSTA",
   "SHARE": "COMPARTIR",
   "CLOSE": "CERRAR",
+  "ERROR": "ERROR",
   "sampledatamanagement": {
     "title": "SampleData_ES_Tabla",
     "subtitle": "SampleData_ES_Descripción",

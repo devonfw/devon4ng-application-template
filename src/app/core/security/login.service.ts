@@ -11,17 +11,26 @@ export class LoginService {
 
     constructor(public router: Router,
                 private BO: BusinessOperationsService,
-                private http: Http,
-                private httpClient: HttpClient) { }
+                private http: HttpClient) { }
 
     login(username: string, password: string): Observable<any> {
         return this.http.post(this.BO.login(),
-            { j_username: username, j_password: password },
-            { withCredentials: true }
+            {
+                j_username: username,
+                j_password: password
+            },
+            {
+                withCredentials: true,
+                responseType: 'text'
+            }
         );
     }
 
+    logout() {
+        return this.http.get(this.BO.logout(), { responseType: 'text' });
+    }
+
     getCsrf(): Observable<any> {
-        return this.httpClient.get(this.BO.getCsrf());
+        return this.http.get(this.BO.getCsrf(), { withCredentials: true });
     }
 }

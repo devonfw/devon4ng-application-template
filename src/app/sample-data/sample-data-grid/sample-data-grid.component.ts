@@ -68,8 +68,8 @@ export class SampleDataGridComponent implements OnInit {
       (error: any) => {
         console.error(error);
         this._dialogService.openAlert({
-          message: error,
-          title: this.getTranslation('sampledatamanagement.alert.title'),
+          message: error.message,
+          title: this.getTranslation('ERROR'),
           closeButton: 'CLOSE'
         });
       });
