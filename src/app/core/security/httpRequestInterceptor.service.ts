@@ -22,32 +22,18 @@ export class HttpRequestInterceptorService implements HttpInterceptor {
     constructor(private router: Router,
                 private auth: AuthService) {
         this.headers = new HttpHeaders();
-        this.headers.append('Content-Type',  'application/json');
-    }
-
-    setHeaderToken(name, value) {
-        this.headers.delete(name);
-        this.headers.append(name, value);
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // Get the auth header from the service.
         const authHeader: string = this.auth.getToken();
         if (authHeader) {
-            this.setHeaderToken('x-csrf-token', authHeader);
-            const authReq: HttpRequest<any> = req.clone({withCredentials: true, headers: this.headers});
-
-            next.handle(authReq).subscribe((data: any) => {
-                    console.log(data);
-                    return Observable.of(data);
-                }, (error: any) => {
-                    if (error.status === 400 || error.status === 500) {
-                        this.auth.setLogged(false);
-                        this.headers.delete('x-csrf-token');
-                        this.router.navigate(['/login']);
-                    }
-                    return Observable.throw(error);
+            const authReq: HttpRequest<any> = req.clone({
+                withCredentials: true,
+                setHeaders: { 'x-csrf-token': authHeader }
             });
+
+            return next.handle(authReq);
         } else {
             return next.handle(req);
         }

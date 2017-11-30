@@ -64,13 +64,15 @@ export class SampleDataGridComponent implements OnInit {
       .subscribe((res: any) => {
         this.data = res.result;
         this.totalItems = res.pagination.total;
+        this.dataTable.refresh();
       },
       (error: any) => {
-        console.error(error);
-        this._dialogService.openAlert({
-          message: error.message,
-          title: this.getTranslation('ERROR'),
-          closeButton: 'CLOSE'
+        setTimeout(() => {
+          this._dialogService.openAlert({
+            message: error.message,
+            title: this.getTranslation('ERROR'),
+            closeButton: 'CLOSE'
+          });
         });
       });
   }
@@ -104,8 +106,8 @@ export class SampleDataGridComponent implements OnInit {
   }
 
   sort(sortEvent: ITdDataTableSortChangeEvent): void {
-    this.sorting = _.reject(this.sorting, { 'name': sortEvent.name });
-    this.sorting.push({ 'name': sortEvent.name, 'direction': sortEvent.order });
+    this.sorting = [];
+    this.sorting.push({ 'name': sortEvent.name.split('.').pop(), 'direction': '' + sortEvent.order });
     this.getData();
   }
 

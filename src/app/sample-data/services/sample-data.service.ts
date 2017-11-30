@@ -25,7 +25,7 @@ export class SampleDataDataGridService {
       sort: sort
     };
 
-    return this.http.post(this.urlService + 'search', pageData);
+    return this.http.post<any>(this.urlService + 'search', pageData);
   }
 
   saveData(data) {
