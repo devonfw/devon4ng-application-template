@@ -1,5 +1,5 @@
 {
-"buttons": {
+  "buttons": {
     "submit": "Send",
     "search": "SEARCH",
     "cancel": "CANCEL",
@@ -11,8 +11,10 @@
     "deleteItem": "Delete item"
   },
   "header": {
-	"title": "Angular Application",
-    "error": "LOGIN ERROR"
+    "title": "OASP4JS",
+    "error": "LOGIN ERROR",
+    "EN": "English",
+    "ES": "Spanish"
   },
   "login": {
     "title": "Login",
@@ -20,5 +22,12 @@
     "password": "Password",
     "errorMsg": "Wrong username or password"
   },
-  "home": "Home"
+  "home": "Home",
+  "description": "Description",
+  "example": "Example",
+  "example description": "Example Description",
+  "LIKE": "LIKE",
+  "SHARE": "SHARE",
+  "CLOSE": "CLOSE",
+  "ERROR": "ERROR"
 }

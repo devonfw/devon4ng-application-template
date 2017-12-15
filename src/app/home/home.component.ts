@@ -1,8 +1,5 @@
-import { DomSanitizer } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { MdIconRegistry } from '@angular/material';
 import { TdMediaService } from '@covalent/core';
 
 @Component({
@@ -10,4 +7,20 @@ import { TdMediaService } from '@covalent/core';
     templateUrl: './home.component.html',
 })
 
-export class HomeComponent {}
+export class HomeComponent {
+    sideNavOpened = false;
+    constructor(private router: Router,
+        public media: TdMediaService) {}
+
+    navigateTo(route: string): void {
+        this.router.navigate([route]);
+    }
+
+    onToggle(value) {
+        this.sideNavOpened = value;
+    }
+
+    close() {
+        this.sideNavOpened = false;
+    }
+}
