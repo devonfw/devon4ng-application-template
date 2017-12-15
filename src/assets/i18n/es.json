@@ -1,58 +1,60 @@
 {
-  "buttons": {
-    "submit": "Enviar",
-    "close": "Cerrar",
-    "cancel": "CANCELAR",
-    "save": "GUARDAR",
-    "search": "BUSCAR",
-    "clean": "LIMPIAR",
-    "addItem": "Añadir fila",
-    "editItem": "Editar fila",
-    "deleteItem": "Eliminar fila"
-  },
-  "header": {
-    "title": "OASP4JS",
-    "error": "Error de acceso",
-    "EN": "Inglés",
-    "ES": "Español"
-  },
-  "login": {
-    "title": "Acceso",
-    "username": "Nombre de usuario",
-    "password": "Contraseña",
-    "errorMsg": "Nombre de usuario o contraseña incorrectos"
-  },
-  "home": "Inicio",
-  "description": "Descripción",
-  "example": "Ejemplo",
-  "example description": "Descripción de Ejemplo",
-  "LIKE": "ME GUSTA",
-  "SHARE": "COMPARTIR",
-  "CLOSE": "CERRAR",
-  "ERROR": "ERROR",
-  "sampledatamanagement": {
-    "title": "SampleData_ES_Tabla",
-    "subtitle": "SampleData_ES_Descripción",
-    "addtitle": "Añadir nueva fila",
-    "editTitle": "Editar fila existente",
-    "searchTip": "Panel de búsqueda",
-    "sortTip": "Limpiar Ordenación",
-    "alert": {
-      "acceptBtn": "Sí, Eliminar",
-      "cancelBtn": "No, Cancelar",
-      "title": "Confirmación",
-      "message": "¿Seguro que deseas eliminar esta fila?"
+    "buttons": {
+        "cancel": "CANCELAR",
+        "addItem": "Añadir fila",
+        "search": "BUSCAR",
+        "submit": "Enviar",
+        "editItem": "Editar fila",
+        "deleteItem": "Eliminar fila",
+        "save": "GUARDAR",
+        "clean": "LIMPIAR",
+        "close": "Cerrar"
     },
-    "SampleData": {
-      "navData": "SampleData_ES",
-      "navDataSub": "SampleData_ES",
-      "navDataSubDescription": "SampleData_ES_Descripción",            
-      "columns": {
-        "mail": "Mail_ES",
-        "surname": "Surname_ES",
-        "name": "Name_ES",
-        "age": "Age_ES"
-      }
-    }
-  }
+    "LIKE": "ME GUSTA",
+    "sampledatamanagement": {
+        "alert": {
+            "acceptBtn": "Sí, Eliminar",
+            "cancelBtn": "No, Cancelar",
+            "title": "Confirmación",
+            "message": "¿Seguro que deseas eliminar esta fila?"
+        },
+        "SampleData": {
+            "navDataSubDescription": "SampleData_EN_Descripción",
+            "navDataSub": "SampleData_ES",
+            "columns": {
+                "mail": "Mail_ES",
+                "surname": "Surname_ES",
+                "name": "Name_ES",
+                "age": "Age_ES"
+            },
+            "subtitle": "SampleData_ES_Descripción",
+            "title": "SampleData_ES_Grid",
+            "navData": "SampleData_ES"
+        },
+        "subtitle": "SampleData_ES_Descripción",
+        "editTitle": "Editar fila existente",
+        "title": "SampleData_ES_Tabla",
+        "addtitle": "Añadir nueva fila",
+        "searchTip": "Panel de búsqueda",
+        "sortTip": "Limpiar Ordenación"
+    },
+    "example description": "Descripción de Ejemplo",
+    "header": {
+        "EN": "Inglés",
+        "title": "OASP4JS",
+        "error": "Error de acceso",
+        "ES": "Español"
+    },
+    "description": "Descripción",
+    "ERROR": "ERROR",
+    "CLOSE": "CERRAR",
+    "login": {
+        "password": "Contraseña",
+        "title": "Acceso",
+        "username": "Nombre de usuario",
+        "errorMsg": "Nombre de usuario o contraseña incorrectos"
+    },
+    "SHARE": "COMPARTIR",
+    "home": "Inicio",
+    "example": "Ejemplo"
 }

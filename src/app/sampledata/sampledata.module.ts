@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleDataDataGridService } from './services/sample-data.service';
-import { SampleDataGridComponent } from './sample-data-grid/sample-data-grid.component';
-import { SampleDataDialogComponent } from './sample-data-dialog/sample-data-dialog.component';
+import { SampleDataDataGridService } from './services/sampledata.service';
+import { SampleDataGridComponent } from './sampledata-grid/sampledata-grid.component';
+import { SampleDataDialogComponent } from './sampledata-dialog/sampledata-dialog.component';
 import { CoreModule } from '../core/core.module';
 
 @NgModule({
@@ -13,6 +13,9 @@ import { CoreModule } from '../core/core.module';
   declarations: [
     SampleDataGridComponent,
     SampleDataDialogComponent
+  ],
+  entryComponents: [
+    SampleDataDialogComponent,
   ],
   providers: [
     SampleDataDataGridService

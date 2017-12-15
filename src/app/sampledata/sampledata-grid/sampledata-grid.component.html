@@ -1,11 +1,21 @@
 <div layout="row" class="pad-sm" flex>
   <mat-card flex>
     <mat-card-header>
-      <mat-card-title>{{ 'sampledatamanagement.title' | translate }}</mat-card-title>
-      <mat-card-subtitle>{{ 'sampledatamanagement.subtitle' | translate }}</mat-card-subtitle>
+      <mat-card-title>{{ 'sampledatamanagement.SampleData.title' | translate }}</mat-card-title>
+      <mat-card-subtitle>{{ 'sampledatamanagement.SampleData.subtitle' | translate }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <form (ngSubmit)="getData()" #filterForm="ngForm">
+      <button mat-button flex class="push-right-sm" [matTooltip]="'buttons.addItem' | translate" (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-button flex class="push-right-sm" [disabled]="!selectedRow" [matTooltip]="'buttons.editItem' | translate" (click)="openEditDialog()">
+        <mat-icon>mode_edit</mat-icon>
+      </button>
+      <button mat-button flex class="push-right-sm" [disabled]="!selectedRow" [matTooltip]="'buttons.deleteItem' | translate" (click)="openConfirm()">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <form (ngSubmit)="getSampleData()" #filterForm="ngForm">
         <td-expansion-panel label="Filters">
           <div layout="row" class="pad-left-md pad-right-md" style="align-items:center; border-bottom: 1px solid lightgrey" flex>
             <div layout-xs="column" class="justify-space-around" style="align-items:center" hide-gt-xs flex>
@@ -16,10 +26,10 @@
                 <input matInput placeholder="Surname" [(ngModel)]="searchTerms.surname" name="surname">
               </mat-form-field>
               <mat-form-field color="accent">
-                <input type="number" matInput placeholder="Age" [(ngModel)]="searchTerms.age" name="age">
+                <input matInput placeholder="Age" [(ngModel)]="searchTerms.age" name="age">
               </mat-form-field>
               <mat-form-field color="accent">
-                <input type="email" matInput placeholder="Email" [(ngModel)]="searchTerms.email" name="email" email>
+                <input matInput placeholder="Mail" [(ngModel)]="searchTerms.mail" name="mail">
               </mat-form-field>
             </div>
             <div layout-gt-xs="row" class="justify-space-around" style="align-items:center" hide-xs flex>
@@ -30,15 +40,15 @@
                 <input matInput placeholder="Surname" [(ngModel)]="searchTerms.surname" name="surname">
               </mat-form-field>
               <mat-form-field color="accent" class="pad-sm" flex>
-                <input type="number" matInput placeholder="Age" [(ngModel)]="searchTerms.age" name="age">
+                <input matInput type="number" placeholder="Age" [(ngModel)]="searchTerms.age" name="age">
               </mat-form-field>
               <mat-form-field color="accent" class="pad-sm" flex>
-                <input type="email" matInput placeholder="Email" [(ngModel)]="searchTerms.email" name="email" email>
+                <input matInput placeholder="Mail" [(ngModel)]="searchTerms.mail" name="mail">
               </mat-form-field>
             </div>
           </div>
           <div class="align-right">
-            <button mat-button type="button" (click)="clearFilters(filterForm)" class="text-upper property-text-bold">Clear filters</button>
+            <button mat-button type="button" (click)="searchReset(filterForm)" class="text-upper property-text-bold">Clear filters</button>
             <button mat-raised-button type="submit" color="accent" class="text-upper property-text-bold">Apply filters</button>
           </div>
         </td-expansion-panel>
@@ -48,8 +58,9 @@
         [data]="data"
         [columns]="columns"
         [sortable]="true"
-        clickable="true"
-        (rowClick)="selected($event)"
+        [selectable]="true"
+        [multiple]="false"
+        (rowSelect)="selectEvent($event)"
         (sortChange)="sort($event)">
       </td-data-table>
       <div class="mat-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
