@@ -29,30 +29,5 @@
   "LIKE": "ME GUSTA",
   "SHARE": "COMPARTIR",
   "CLOSE": "CERRAR",
-  "ERROR": "ERROR",
-  "sampledatamanagement": {
-    "title": "SampleData_ES_Tabla",
-    "subtitle": "SampleData_ES_Descripción",
-    "addtitle": "Añadir nueva fila",
-    "editTitle": "Editar fila existente",
-    "searchTip": "Panel de búsqueda",
-    "sortTip": "Limpiar Ordenación",
-    "alert": {
-      "acceptBtn": "Sí, Eliminar",
-      "cancelBtn": "No, Cancelar",
-      "title": "Confirmación",
-      "message": "¿Seguro que deseas eliminar esta fila?"
-    },
-    "SampleData": {
-      "navData": "SampleData_ES",
-      "navDataSub": "SampleData_ES",
-      "navDataSubDescription": "SampleData_ES_Descripción",            
-      "columns": {
-        "mail": "Mail_ES",
-        "surname": "Surname_ES",
-        "name": "Name_ES",
-        "age": "Age_ES"
-      }
-    }
-  }
+  "ERROR": "ERROR"
 }
