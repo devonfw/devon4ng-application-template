@@ -1,27 +1,25 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-sampledata-dialog',
-  templateUrl: './sampledata-dialog.component.html'
+  selector: 'public-sampledata-dialog',
+  templateUrl: './sampledata-dialog.component.html',
 })
-export class SampleDataDialogComponent implements OnInit {
-
+export class SampleDataDialogComponent {
   title: string;
-  items = {
+  items: any = {
     name: '',
     surname: '',
     age: '',
-    mail: ''
+    mail: '',
   };
 
-  ngOnInit() {
-  }
-
-  constructor(public dialogRef: MatDialogRef<SampleDataDialogComponent >,
-              private translate: TranslateService,
-              @Inject(MAT_DIALOG_DATA) dialogData: any) {
+  constructor(
+    private translate: TranslateService,
+    public dialogRef: MatDialogRef<SampleDataDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) dialogData: any,
+  ) {
     if (!dialogData) {
       this.title = this.getTranslation('sampledatamanagement.addTitle');
     } else {
@@ -32,10 +30,9 @@ export class SampleDataDialogComponent implements OnInit {
 
   getTranslation(text: string): string {
     let value: string;
-    this.translate.get(text).subscribe((res) => {
+    this.translate.get(text).subscribe((res: any) => {
       value = res;
     });
     return value;
   }
-
 }

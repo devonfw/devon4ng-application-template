@@ -5,22 +5,23 @@ import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+  selector: 'public-root',
+  templateUrl: './app.component.html',
 })
-
 export class AppComponent {
-  constructor(private router: Router,
-    private translate: TranslateService,
-    private iconReg: MatIconRegistry,
-    private sanitizer: DomSanitizer) {
+  constructor(
+    public router: Router,
+    public translate: TranslateService,
+    public iconReg: MatIconRegistry,
+    public sanitizer: DomSanitizer,
+  ) {
     // NGX Translate
     translate.setDefaultLang('en');
     translate.use('en');
     // Icon registered
     iconReg.addSvgIcon(
       'logo',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/Logo.svg')
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/Logo.svg'),
     );
   }
 }

@@ -9,20 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { TdMediaService } from '@covalent/core';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule,
-    AppRoutingModule,
-    TranslateModule,
-  ],
-  providers: [
-    TdMediaService
-  ],
-  declarations: [
-    HeaderComponent,
-  ],
-  exports: [
-    HeaderComponent,
-  ],
+  imports: [CommonModule, CoreModule, AppRoutingModule, TranslateModule],
+  providers: [TdMediaService],
+  declarations: [HeaderComponent],
+  exports: [HeaderComponent],
 })
-export class LayoutModule { }
+export class LayoutModule {}

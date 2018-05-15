@@ -1,5 +1,5 @@
 <td-layout-nav>
-  <app-header td-toolbar-content [sideNavOpened]="true" flex></app-header>
+  <public-header td-toolbar-content [sideNavOpened]="true" flex></public-header>
   <div layout="row" layout-align="center" class="pad-top-xl">
     <mat-card style="width:350px;">
       <mat-card-title>{{'login.title' | translate}}</mat-card-title>
@@ -8,11 +8,11 @@
           <mat-form-field flex>
             <input matInput type="text" [placeholder]="'login.username' | translate" ngModel name="username" required>
           </mat-form-field>
-          
+
           <mat-form-field flex>
             <input matInput type="password" [placeholder]="'login.password' | translate" ngModel name="password" required>
           </mat-form-field>
-          
+
           <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">{{'buttons.submit'| translate}}</button>
         </form>
       </mat-card-content>

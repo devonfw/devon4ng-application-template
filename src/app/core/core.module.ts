@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
 import {
   HttpClientModule,
   HttpClientXsrfModule,
   HTTP_INTERCEPTORS,
-  HttpClient
 } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -40,11 +38,10 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatIcon,
-  MatIconRegistry,
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
-import { CovalentChipsModule,
+import {
+  CovalentChipsModule,
   CovalentLayoutModule,
   CovalentExpansionPanelModule,
   CovalentDataTableModule,
@@ -54,8 +51,6 @@ import { CovalentChipsModule,
   CovalentNotificationsModule,
   CovalentCommonModule,
 } from '@covalent/core';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import 'hammerjs';
 
 import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
@@ -64,22 +59,13 @@ import { AuthService } from './security/auth.service';
 import { BusinessOperationsService } from './shared/business-operations.service';
 import { LoginService } from './security/login.service';
 
-export function translateFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
 @NgModule({
   imports: [
     HttpClientModule,
     HttpClientXsrfModule,
+    CdkTableModule,
     RouterModule,
     BrowserAnimationsModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: translateFactory,
-        deps: [HttpClient]
-      }
-    }),
   ],
   exports: [
     CommonModule,
@@ -113,6 +99,7 @@ export function translateFactory(http: HttpClient) {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    CdkTableModule,
     CovalentChipsModule,
     CovalentLayoutModule,
     CovalentExpansionPanelModule,
@@ -122,7 +109,6 @@ export function translateFactory(http: HttpClient) {
     CovalentNotificationsModule,
     CovalentCommonModule,
     CovalentDialogsModule,
-    TranslateModule,
   ],
   declarations: [],
   providers: [
@@ -130,8 +116,11 @@ export function translateFactory(http: HttpClient) {
     LoginService,
     AuthService,
     BusinessOperationsService,
-    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptorService, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptorService,
+      multi: true,
+    },
   ],
 })
-
 export class CoreModule {}

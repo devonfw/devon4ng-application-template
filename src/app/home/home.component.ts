@@ -3,24 +3,22 @@ import { Router } from '@angular/router';
 import { TdMediaService } from '@covalent/core';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
+  selector: 'public-home',
+  templateUrl: './home.component.html',
 })
-
 export class HomeComponent {
-    sideNavOpened = false;
-    constructor(private router: Router,
-        public media: TdMediaService) {}
+  sideNavOpened: boolean = false;
+  constructor(private router: Router, public media: TdMediaService) {}
 
-    navigateTo(route: string): void {
-        this.router.navigate([route]);
-    }
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
+  }
 
-    onToggle(value) {
-        this.sideNavOpened = value;
-    }
+  onToggle(value: boolean): void {
+    this.sideNavOpened = value;
+  }
 
-    close() {
-        this.sideNavOpened = false;
-    }
+  close(): void {
+    this.sideNavOpened = false;
+  }
 }

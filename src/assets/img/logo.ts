@@ -1,4 +1,5 @@
-export let logo = `
+/*tslint:disable*/
+export let logo: string = `
     <?xml version="1.0" encoding="utf-8"?>
         <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -49,7 +50,6 @@ export let logo = `
                     <polygon class="st2" points="359.3,174.8 292.7,189.9 275.9,135.8 289.7,86.6 308.8,86.6 			"/>
                     <polygon class="st2" points="359.3,174.8 292.7,189.9 254.1,213.6 240.3,262.3 308.8,262.3 			"/>
                 </g>
-                
                     <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="3431.9358" y1="-681.325" x2="3437.7834" y2="-581.8619" gradientTransform="matrix(-1 0 0 -1 3751.0083 -499.9077)">
                     <stop  offset="0" style="stop-color:#3C3C3B;stop-opacity:0.2"/>
                     <stop  offset="4.563826e-002" style="stop-color:#646464;stop-opacity:0.1909"/>
@@ -63,7 +63,6 @@ export let logo = `
                     <stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
                 </linearGradient>
                 <polygon class="st4" points="275.8,135.9 289.6,86.7 308.7,86.7 359.3,174.9 292.6,190.1 		"/>
-                
                     <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-1026.8115" y1="-330.5899" x2="-1020.9638" y2="-231.1264" gradientTransform="matrix(1 0 0 1 1223.7461 498.75)">
                     <stop  offset="0" style="stop-color:#3C3C3B;stop-opacity:0.2"/>
                     <stop  offset="4.563826e-002" style="stop-color:#646464;stop-opacity:0.1909"/>
@@ -82,4 +81,4 @@ export let logo = `
         <g id="Capa_2">
         </g>
         </svg>
-`
+`;

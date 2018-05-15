@@ -6,37 +6,46 @@ import { HomeComponent } from './home/home.component';
 import { InitialPageComponent } from './home/initial-page/initial-page.component';
 import { SampleDataGridComponent } from './sampledata/sampledata-grid/sampledata-grid.component';
 
-
-const routes: Routes = [{
+const routes: Routes = [
+  {
     path: 'login',
-    component: LoginComponent
-}, {
+    component: LoginComponent,
+  },
+  {
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
-    children: [{
+    children: [
+      {
         path: '',
         redirectTo: '/home/initialPage',
         pathMatch: 'full',
-        canActivate: [AuthGuard]
-    }, {
+        canActivate: [AuthGuard],
+      },
+      {
         path: 'initialPage',
         component: InitialPageComponent,
-        canActivate: [AuthGuard]
-    }, {
+        canActivate: [AuthGuard],
+      },
+      {
         path: 'sampleData',
         component: SampleDataGridComponent,
-        canActivate: [AuthGuard]
-    }]
-}, {
+        canActivate: [AuthGuard],
+      },
+    ],
+  },
+  {
     path: '',
     redirectTo: '/login',
-    pathMatch: 'full'
-}, {
+    pathMatch: 'full',
+  },
+  {
     path: '**',
-    redirectTo: '/login'
-}];
+    redirectTo: '/login',
+  },
+];
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-}) export class AppRoutingModule {}
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
