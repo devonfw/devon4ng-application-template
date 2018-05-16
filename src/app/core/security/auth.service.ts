@@ -3,24 +3,24 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-    private logged = false;
-    private token: string;
+  private logged: boolean = false;
+  private token: string;
 
-    constructor(public router: Router) { }
+  constructor(public router: Router) {}
 
-    public isLogged(): boolean {
-        return this.logged || false;
-    }
+  public isLogged(): boolean {
+    return this.logged || false;
+  }
 
-    public setLogged(login: boolean): void {
-        this.logged = login;
-    }
+  public setLogged(login: boolean): void {
+    this.logged = login;
+  }
 
-    public getToken(): string {
-        return this.token;
-    }
+  public getToken(): string {
+    return this.token;
+  }
 
-    public setToken(token: string): void {
-        this.token = token;
-    }
+  public setToken(token: string): void {
+    this.token = token;
+  }
 }

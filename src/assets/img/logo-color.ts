@@ -1,3 +1,4 @@
-export let logoColor = `
+/*tslint:disable*/
+export let logoColor: string = `
 
-`
+`;

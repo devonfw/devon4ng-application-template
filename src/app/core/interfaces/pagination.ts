@@ -1,5 +1,5 @@
 export interface Pagination {
-    size: number,
-    page: number,
-    total: number,
+  size: number;
+  page: number;
+  total: number;
 }
