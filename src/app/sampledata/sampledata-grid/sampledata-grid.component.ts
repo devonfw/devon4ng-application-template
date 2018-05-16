@@ -9,7 +9,7 @@ import {
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { SampleDataDataGridService } from '../services/sampledata.service';
+import { SampleDataService } from '../services/sampledata.service';
 import { AuthService } from '../../core/security/auth.service';
 import { SampleDataDialogComponent } from '../sampledata-dialog/sampledata-dialog.component';
 import { Pagination } from '../../core/interfaces/pagination';
@@ -70,7 +70,7 @@ export class SampleDataGridComponent implements OnInit {
     public dialog: MatDialog,
     public authService: AuthService,
     public router: Router,
-    private dataGridService: SampleDataDataGridService,
+    private dataGridService: SampleDataService,
     private _dialogService: TdDialogService,
   ) {}
 

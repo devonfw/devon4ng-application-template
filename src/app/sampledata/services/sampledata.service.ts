@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { PageData } from '../../core/interfaces/page-data';
 
 @Injectable()
-export class SampleDataDataGridService {
+export class SampleDataService {
   private urlService: string = environment.restServiceRoot +
   'sampledatamanagement/v1/sampledata/';
   constructor(private http: HttpClient) {}
