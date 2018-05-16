@@ -4,9 +4,6 @@ export interface PageData {
     page: number;
     total: number;
   };
-  name: any;
-  surname: any;
-  age: any;
-  mail: any;
   sort: any[];
+  [propName: string]: any;
 }
