@@ -1,3 +1,4 @@
+import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
@@ -20,10 +21,22 @@ export class HttpRequestInterceptorService implements HttpInterceptor {
     // Get the auth header from the service.
     const authHeader: string = this.auth.getToken();
     if (authHeader) {
-      const authReq: HttpRequest<any> = req.clone({
-        withCredentials: true,
-        setHeaders: { 'x-csrf-token': authHeader },
-      });
+      let authReq: HttpRequest<any>;
+
+      // CSRF
+      if (environment.security === 'csrf') {
+        authReq = req.clone({
+          withCredentials: true,
+          setHeaders: { 'x-csrf-token': authHeader },
+        });
+      }
+
+      // JWT
+      if (environment.security === 'jwt') {
+        authReq = req.clone({
+          setHeaders: { Authorization: authHeader },
+        });
+      }
 
       return next.handle(authReq);
     } else {
