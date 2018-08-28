@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 
+import { environment } from '../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../core/security/auth.service';
 import { LoginService } from '../core/security/login.service';
@@ -23,11 +24,21 @@ export class LoginComponent {
       .login(login.value.username, login.value.password)
       .subscribe(
         (res: any) => {
-          this.loginService.getCsrf().subscribe((data: any) => {
-            this.authService.setToken(data.token);
+          // CSRF
+          if (environment.security === 'csrf') {
+            this.loginService.getCsrf().subscribe((data: any) => {
+              this.authService.setToken(data.token);
+              this.authService.setLogged(true);
+              this.router.navigate(['/home']);
+            });
+          }
+
+          // JWT
+          if (environment.security === 'jwt') {
+            this.authService.setToken(res.headers.get('Authorization'));
             this.authService.setLogged(true);
             this.router.navigate(['/home']);
-          });
+          }
         },
         (err: any) => {
           this.authService.setLogged(false);
