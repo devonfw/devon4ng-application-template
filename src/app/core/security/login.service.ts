@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { BusinessOperationsService } from '../../core/shared/business-operations.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class LoginService {
@@ -14,16 +15,28 @@ export class LoginService {
   ) {}
 
   login(username: string, password: string): Observable<any> {
+    let options: any;
+
+    // CSRF
+    if (environment.security === 'csrf') {
+      options = {
+        withCredentials: true,
+        responseType: 'text',
+      };
+    }
+
+    // JWT
+    if (environment.security === 'jwt') {
+      options = { responseType: 'text', observe: 'response' };
+    }
+
     return this.http.post(
       this.BO.login(),
       {
-        j_username: username,
-        j_password: password,
+        username: username,
+        password: password,
       },
-      {
-        withCredentials: true,
-        responseType: 'text',
-      },
+      options,
     );
   }
 
