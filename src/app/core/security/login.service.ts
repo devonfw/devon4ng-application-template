@@ -33,8 +33,8 @@ export class LoginService {
     return this.http.post(
       this.BO.login(),
       {
-        username: username,
-        password: password,
+        j_username: username,
+        j_password: password,
       },
       options,
     );
