@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SampleDataService } from '../services/sampledata.service';
 import { AuthService } from '../../core/security/auth.service';
 import { SampleDataDialogComponent } from '../sampledata-dialog/sampledata-dialog.component';
-import { Pagination } from '../../core/interfaces/pagination';
+import { Pageable } from '../../core/interfaces/pageable';
 
 @Component({
   selector: 'public-sampledata-grid',
@@ -20,10 +20,9 @@ import { Pagination } from '../../core/interfaces/pagination';
   styleUrls: ['./sampledata-grid.component.scss'],
 })
 export class SampleDataGridComponent implements OnInit {
-  private pagination: Pagination = {
-    size: 8,
-    page: 1,
-    total: 1,
+  private pageable: Pageable = {
+    pageSize: 8,
+    pageNumber: 1,
   };
   private sorting: any[] = [];
 
@@ -81,14 +80,14 @@ export class SampleDataGridComponent implements OnInit {
     this.dataGridService
       .getSampleData(
         this.pageSize,
-        this.pagination.page,
+        this.pageable.pageNumber,
         this.searchTerms,
         this.sorting,
       )
       .subscribe(
         (res: any) => {
           this.data = res.result;
-          this.totalItems = res.pagination.total;
+          this.totalItems = res.pageable.total;
           this.dataTable.refresh();
         },
         (error: any) => {
@@ -122,10 +121,9 @@ export class SampleDataGridComponent implements OnInit {
     return value;
   }
   page(pagingEvent: IPageChangeEvent): void {
-    this.pagination = {
-      size: pagingEvent.pageSize,
-      page: pagingEvent.page,
-      total: 1,
+    this.pageable = {
+      pageSize: pagingEvent.pageSize,
+      pageNumber: pagingEvent.pageNumber,
     };
     this.getSampleData();
   }

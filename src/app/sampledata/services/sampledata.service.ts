@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
-import { PageData } from '../../core/interfaces/page-data';
+import { SearchCriteria } from '../../core/interfaces/search-criteria';
 
 @Injectable()
 export class SampleDataService {
@@ -15,19 +15,17 @@ export class SampleDataService {
     searchTerms: any,
     sort: any[],
   ): Observable<any> {
-    const pageData: PageData = {
-      pagination: {
-        size: size,
-        page: page,
-        total: 1,
+    const searchCriteria: SearchCriteria = {      
+      pageable: {
+        pageSize: size,
+        pageNumber: page,        
       },
       name: searchTerms.name,
       surname: searchTerms.surname,
       age: searchTerms.age,
       mail: searchTerms.mail,
-      sort: sort,
     };
-    return this.http.post<any>(this.urlService + 'search', pageData);
+    return this.http.post<any>(this.urlService + 'search', searchCriteria);
   }
 
   saveSampleData(data: any): Observable<Object> {
