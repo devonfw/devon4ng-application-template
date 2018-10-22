@@ -18,7 +18,8 @@ export class SampleDataService {
     const searchCriteria: SearchCriteria = {      
       pageable: {
         pageSize: size,
-        pageNumber: page,        
+        pageNumber: page,
+        sort: sort,
       },
       name: searchTerms.name,
       surname: searchTerms.surname,

@@ -79,10 +79,10 @@ export class SampleDataGridComponent implements OnInit {
   getSampleData(): void {
     this.dataGridService
       .getSampleData(
-        this.pageSize,
+        this.pageable.pageSize,
         this.pageable.pageNumber,
         this.searchTerms,
-        this.sorting,
+        this.pageable.sort = this.sorting,
       )
       .subscribe(
         (res: any) => {
@@ -131,7 +131,7 @@ export class SampleDataGridComponent implements OnInit {
   sort(sortEvent: ITdDataTableSortChangeEvent): void {
     this.sorting = [];
     this.sorting.push({
-      name: sortEvent.name.split('.').pop(),
+      property: sortEvent.name.split('.').pop(),
       direction: '' + sortEvent.order,
     });
     this.getSampleData();
