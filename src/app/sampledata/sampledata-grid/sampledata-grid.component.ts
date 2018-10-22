@@ -22,7 +22,7 @@ import { Pageable } from '../../core/interfaces/pageable';
 export class SampleDataGridComponent implements OnInit {
   private pageable: Pageable = {
     pageSize: 8,
-    pageNumber: 1,
+    pageNumber: 0,
   };
   private sorting: any[] = [];
 
@@ -86,8 +86,8 @@ export class SampleDataGridComponent implements OnInit {
       )
       .subscribe(
         (res: any) => {
-          this.data = res.result;
-          this.totalItems = res.pageable.total;
+          this.data = res.content;
+          this.totalItems = res.pageable.pageSize;
           this.dataTable.refresh();
         },
         (error: any) => {
@@ -123,7 +123,8 @@ export class SampleDataGridComponent implements OnInit {
   page(pagingEvent: IPageChangeEvent): void {
     this.pageable = {
       pageSize: pagingEvent.pageSize,
-      pageNumber: pagingEvent.pageNumber,
+      pageNumber: pagingEvent.page,
+      sort: this.pageable.sort,
     };
     this.getSampleData();
   }

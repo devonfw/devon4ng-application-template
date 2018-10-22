@@ -31,6 +31,7 @@ export class SampleDataService {
   saveSampleData(data: any): Observable<Object> {
     const obj: any = {
       id: data.id,
+      modificationCounter: data.modificationCounter,
       name: data.name,
       surname: data.surname,
       age: data.age,
