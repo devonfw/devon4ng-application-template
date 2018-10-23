@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SampleDataService } from '../services/sampledata.service';
 import { AuthService } from '../../core/security/auth.service';
 import { SampleDataDialogComponent } from '../sampledata-dialog/sampledata-dialog.component';
-import { Pagination } from '../../core/interfaces/pagination';
+import { Pageable } from '../../core/interfaces/pageable';
 
 @Component({
   selector: 'public-sampledata-grid',
@@ -20,10 +20,9 @@ import { Pagination } from '../../core/interfaces/pagination';
   styleUrls: ['./sampledata-grid.component.scss'],
 })
 export class SampleDataGridComponent implements OnInit {
-  private pagination: Pagination = {
-    size: 8,
-    page: 1,
-    total: 1,
+  private pageable: Pageable = {
+    pageSize: 8,
+    pageNumber: 0,
   };
   private sorting: any[] = [];
 
@@ -80,15 +79,15 @@ export class SampleDataGridComponent implements OnInit {
   getSampleData(): void {
     this.dataGridService
       .getSampleData(
-        this.pageSize,
-        this.pagination.page,
+        this.pageable.pageSize,
+        this.pageable.pageNumber,
         this.searchTerms,
-        this.sorting,
+        this.pageable.sort = this.sorting,
       )
       .subscribe(
         (res: any) => {
-          this.data = res.result;
-          this.totalItems = res.pagination.total;
+          this.data = res.content;
+          this.totalItems = res.totalElements;
           this.dataTable.refresh();
         },
         (error: any) => {
@@ -122,17 +121,17 @@ export class SampleDataGridComponent implements OnInit {
     return value;
   }
   page(pagingEvent: IPageChangeEvent): void {
-    this.pagination = {
-      size: pagingEvent.pageSize,
-      page: pagingEvent.page,
-      total: 1,
+    this.pageable = {
+      pageSize: pagingEvent.pageSize,
+      pageNumber: pagingEvent.page - 1,
+      sort: this.pageable.sort,
     };
     this.getSampleData();
   }
   sort(sortEvent: ITdDataTableSortChangeEvent): void {
     this.sorting = [];
     this.sorting.push({
-      name: sortEvent.name.split('.').pop(),
+      property: sortEvent.name.split('.').pop(),
       direction: '' + sortEvent.order,
     });
     this.getSampleData();
