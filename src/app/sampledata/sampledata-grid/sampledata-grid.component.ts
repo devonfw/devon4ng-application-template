@@ -87,7 +87,7 @@ export class SampleDataGridComponent implements OnInit {
       .subscribe(
         (res: any) => {
           this.data = res.content;
-          this.totalItems = res.pageable.pageSize;
+          this.totalItems = res.totalElements;
           this.dataTable.refresh();
         },
         (error: any) => {
@@ -123,7 +123,7 @@ export class SampleDataGridComponent implements OnInit {
   page(pagingEvent: IPageChangeEvent): void {
     this.pageable = {
       pageSize: pagingEvent.pageSize,
-      pageNumber: pagingEvent.page,
+      pageNumber: pagingEvent.page - 1,
       sort: this.pageable.sort,
     };
     this.getSampleData();
