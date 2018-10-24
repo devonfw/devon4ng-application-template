@@ -5,6 +5,7 @@ import {
   TdDialogService,
   IPageChangeEvent,
   ITdDataTableSortChangeEvent,
+  TdPagingBarComponent,
 } from '@covalent/core';
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
@@ -20,13 +21,17 @@ import { Pageable } from '../../core/interfaces/pageable';
   styleUrls: ['./sampledata-grid.component.scss'],
 })
 export class SampleDataGridComponent implements OnInit {
+  @ViewChild('pagingBar')
+  pagingBar: TdPagingBarComponent;
+
   private pageable: Pageable = {
     pageSize: 8,
     pageNumber: 0,
   };
   private sorting: any[] = [];
 
-  @ViewChild('dataTable') dataTable: TdDataTableComponent;
+  @ViewChild('dataTable')
+  dataTable: TdDataTableComponent;
 
   data: any = [];
   columns: ITdDataTableColumn[] = [
@@ -82,7 +87,7 @@ export class SampleDataGridComponent implements OnInit {
         this.pageable.pageSize,
         this.pageable.pageNumber,
         this.searchTerms,
-        this.pageable.sort = this.sorting,
+        (this.pageable.sort = this.sorting),
       )
       .subscribe(
         (res: any) => {
@@ -234,6 +239,12 @@ export class SampleDataGridComponent implements OnInit {
         }
       });
   }
+
+  filter(): void {
+    this.getSampleData();
+    this.pagingBar.firstPage();
+  }
+
   searchReset(form: any): void {
     form.reset();
     this.getSampleData();
