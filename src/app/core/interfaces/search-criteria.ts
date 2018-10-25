@@ -1,4 +1,4 @@
-import { Pageable } from "./pageable";
+import { Pageable } from './pageable';
 
 export interface SearchCriteria {
   pageable: Pageable;

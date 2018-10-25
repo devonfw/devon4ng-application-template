@@ -21,14 +21,14 @@ import { Pageable } from '../../core/interfaces/pageable';
   styleUrls: ['./sampledata-grid.component.scss'],
 })
 export class SampleDataGridComponent implements OnInit {
-  @ViewChild('pagingBar')
-  pagingBar: TdPagingBarComponent;
-
   private pageable: Pageable = {
     pageSize: 8,
     pageNumber: 0,
   };
   private sorting: any[] = [];
+
+  @ViewChild('pagingBar')
+  pagingBar: TdPagingBarComponent;
 
   @ViewChild('dataTable')
   dataTable: TdDataTableComponent;
