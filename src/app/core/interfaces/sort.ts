@@ -1,5 +1,4 @@
 export interface Sort {
-    direction: String;
-    property: String;
-  }
-  
+  direction: String;
+  property: String;
+}
