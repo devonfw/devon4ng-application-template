@@ -241,7 +241,6 @@ export class SampleDataGridComponent implements OnInit {
   }
 
   filter(): void {
-    this.getSampleData();
     this.pagingBar.firstPage();
   }
 
