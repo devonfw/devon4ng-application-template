@@ -1,6 +1,6 @@
 # devon4ng Application Template
 
-This project has been updated to **Angular 6** and uses the [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+This project has been updated to **Angular 7** and uses the [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
 ## Development server
 
