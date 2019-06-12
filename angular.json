@@ -19,8 +19,7 @@
             "assets": ["src/assets", "src/favicon.ico"],
             "styles": [
               "src/assets/styles/material.scss",
-              "src/assets/styles/styles.scss",
-              "node_modules/@covalent/core/common/platform.scss"
+              "src/assets/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -71,8 +70,7 @@
             "scripts": [],
             "styles": [
               "src/assets/styles/material.scss",
-              "src/assets/styles/styles.scss",
-              "node_modules/@covalent/core/common/platform.scss"
+              "src/assets/styles/styles.scss"
             ],
             "assets": ["src/assets", "src/favicon.ico"]
           }

@@ -1,0 +1,99 @@
+.home-container-outer {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .home-container-inner {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .sidenav-container-outer {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    overflow: auto;
+    .sidenav-container-inner {
+      display: flex;
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  mat-sidenav-container {
+    width: 100%;
+  }
+
+  .content-container-outer {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #eaeaea;
+
+    .content-container-inner {
+      display: block;
+      position: relative;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-flex: 1;
+      flex: 1;
+    }
+  }
+}
+
+[matListAvatar] {
+  background-color: rgba(0, 0, 0, 0.04);
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  color: #737373;
+  fill: #737373;
+}
+
+[matLine] {
+  font-size: 14px !important;
+}
+
+.desc[matLine] {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+@media (max-width: 600px) {
+  mat-sidenav {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  mat-sidenav {
+    width: 280px;
+  }
+}

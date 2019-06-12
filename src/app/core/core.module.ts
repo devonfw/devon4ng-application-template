@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
@@ -40,17 +41,6 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
-import {
-  CovalentChipsModule,
-  CovalentLayoutModule,
-  CovalentExpansionPanelModule,
-  CovalentDataTableModule,
-  CovalentSearchModule,
-  CovalentPagingModule,
-  CovalentDialogsModule,
-  CovalentNotificationsModule,
-  CovalentCommonModule,
-} from '@covalent/core';
 import 'hammerjs';
 
 import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
@@ -69,6 +59,7 @@ import { LoginService } from './security/login.service';
   ],
   exports: [
     CommonModule,
+    FormsModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -100,15 +91,6 @@ import { LoginService } from './security/login.service';
     MatToolbarModule,
     MatTooltipModule,
     CdkTableModule,
-    CovalentChipsModule,
-    CovalentLayoutModule,
-    CovalentExpansionPanelModule,
-    CovalentDataTableModule,
-    CovalentSearchModule,
-    CovalentPagingModule,
-    CovalentNotificationsModule,
-    CovalentCommonModule,
-    CovalentDialogsModule,
   ],
   declarations: [],
   providers: [

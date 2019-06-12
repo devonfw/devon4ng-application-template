@@ -9,6 +9,7 @@ import { LoginService } from '../core/security/login.service';
 
 @Component({
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   constructor(
