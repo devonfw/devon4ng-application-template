@@ -131,10 +131,12 @@ export class SampleDataGridComponent implements OnInit {
   }
   sort(sortEvent: Sort): void {
     this.sorting = [];
-    this.sorting.push({
-      property: sortEvent.active.split('.').pop(),
-      direction: '' + sortEvent.direction,
-    });
+    if (sortEvent.direction) {
+      this.sorting.push({
+        property: sortEvent.active.split('.').pop(),
+        direction: '' + sortEvent.direction,
+      });
+    }
     this.getSampleData();
   }
   checkboxLabel(row?: any): string {
@@ -255,6 +257,7 @@ export class SampleDataGridComponent implements OnInit {
   }
 
   filter(): void {
+    this.getSampleData();
     this.pagingBar.firstPage();
   }
 
