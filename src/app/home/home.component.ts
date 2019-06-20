@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TdMediaService } from '@covalent/core';
+import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'public-home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
   sideNavOpened: boolean = false;
-  constructor(private router: Router, public media: TdMediaService) {}
+  isMobile: any;
+  constructor(private router: Router, private breakpoint: BreakpointObserver) {
+    this.breakpoint.observe(Breakpoints.Handset).subscribe((data: any) => {
+      this.isMobile = data.matches;
+    });
+  }
 
   navigateTo(route: string): void {
     this.router.navigate([route]);

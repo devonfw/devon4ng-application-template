@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { environment } from '../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,6 +9,7 @@ import { LoginService } from '../core/security/login.service';
 
 @Component({
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   constructor(

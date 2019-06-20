@@ -1,15 +1,40 @@
-nav {
-    border-bottom: none;
-    margin-right: 20px;
+.header-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
 }
 
-nav a{
-    min-width: 100px !important;
-    color: white;
+[mat-icon-button] {
+  margin: 0 6px;
+}
+
+span[flex] {
+  flex: 1;
+}
+
+.mat-icon-logo {
+  height: 24px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.menu-items-right {
+  padding-right: 8px;
+}
+
+nav {
+  border-bottom: none;
+  margin-right: 20px;
+}
+
+nav a {
+  min-width: 100px !important;
+  color: white;
 }
 
 .navBottomBorder {
-    border-bottom: 3px solid white;
+  border-bottom: 3px solid white;
 }
 
 mat-sidenav {
@@ -23,10 +48,19 @@ mat-sidenav {
   .sidenavMobile {
     width: 100%;
   }
+  .devon-logo {
+    display: none;
+  }
 }
 
 @media (min-width: 600px) {
   .forMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1919px) and (min-width: 1280px) {
+  .menu-button {
     display: none;
   }
 }

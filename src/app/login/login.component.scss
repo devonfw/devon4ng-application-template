@@ -1,0 +1,23 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  background-color: #e0e0e0;
+
+  button[type='submit'] {
+    width: 100%;
+  }
+}
+
+.login-card {
+  width: 350px;
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    width: auto;
+    margin: 8px;
+  }
+}

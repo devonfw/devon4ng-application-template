@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -24,7 +24,12 @@ export class SampleDataDialogComponent {
       this.title = this.getTranslation('sampledatamanagement.addTitle');
     } else {
       this.title = this.getTranslation('sampledatamanagement.editTitle');
-      this.items = dialogData;
+      this.items.name = dialogData.name;
+      this.items.surname = dialogData.surname;
+      this.items.age = dialogData.age;
+      this.items.mail = dialogData.mail;
+      this.items.id = dialogData.id;
+      this.items.modificationCounter = dialogData.modificationCounter;
     }
   }
 
