@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "oasp4js-new-template": {
+    "devon4ng-application-template": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -16,14 +16,10 @@
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ],
+            "assets": ["src/assets", "src/favicon.ico"],
             "styles": [
               "src/assets/styles/material.scss",
-              "src/assets/styles/styles.scss",
-              "node_modules/@covalent/core/common/platform.scss"
+              "src/assets/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -50,18 +46,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "oasp4js-new-template:build"
+            "browserTarget": "devon4ng-application-template:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "oasp4js-new-template:build:production"
+              "browserTarget": "devon4ng-application-template:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "oasp4js-new-template:build"
+            "browserTarget": "devon4ng-application-template:build"
           }
         },
         "test": {
@@ -74,30 +70,21 @@
             "scripts": [],
             "styles": [
               "src/assets/styles/material.scss",
-              "src/assets/styles/styles.scss",
-              "node_modules/@covalent/core/common/platform.scss"
+              "src/assets/styles/styles.scss"
             ],
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ]
+            "assets": ["src/assets", "src/favicon.ico"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "oasp4js-new-template-e2e": {
+    "devon4ng-application-template-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -106,24 +93,20 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "oasp4js-new-template:serve"
+            "devServerTarget": "devon4ng-application-template:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "oasp4js-new-template",
+  "defaultProject": "devon4ng-application-template",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

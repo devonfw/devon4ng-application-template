@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('oasp4js-new-template App', () => {
+describe('devon4ng-application-template App', () => {
   let page: AppPage;
 
   beforeEach(() => {

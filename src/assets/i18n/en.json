@@ -11,10 +11,35 @@
     "close": "Close"
   },
   "LIKE": "LIKE",
+  "sampledatamanagement": {
+    "addTitle": "Add new item",
+    "alert": {
+      "acceptBtn": "Yes, Delete",
+      "cancelBtn": "No, Cancel",
+      "title": "Confirm",
+      "message": "Are you sure you want to delete this item?"
+    },
+    "SampleData": {
+      "navDataSubDescription": "SampleData_EN_Description",
+      "navDataSub": "SampleData_EN",
+      "columns": {
+        "mail": "Mail_EN",
+        "surname": "Surname_EN",
+        "name": "Name_EN",
+        "age": "Age_EN"
+      },
+      "subtitle": "SampleData_EN_Description",
+      "title": "SampleData_EN_Grid",
+      "navData": "SampleData_EN"
+    },
+    "editTitle": "Edit item",
+    "searchTip": "Search Panel",
+    "sortTip": "Clear Sorting"
+  },
   "example description": "Example Description",
   "header": {
     "EN": "English",
-    "title": "OASP4JS",
+    "title": "devon4ng",
     "error": "LOGIN ERROR",
     "ES": "Spanish"
   },
