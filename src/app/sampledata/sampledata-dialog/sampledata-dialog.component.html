@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<form (ngSubmit)="dialogRef.close(items)" #dialogForm="ngForm">
+  <mat-form-field>
+    <input matInput type="string" name="name" [placeholder]="'sampledatamanagement.SampleData.columns.name' | translate" [(ngModel)]="items.name"
+      required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="string" name="surname" [placeholder]="'sampledatamanagement.SampleData.columns.surname' | translate"
+      [(ngModel)]="items.surname" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" name="age" [placeholder]="'sampledatamanagement.SampleData.columns.age' | translate" [(ngModel)]="items.age"
+      required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="string" name="mail" [placeholder]="'sampledatamanagement.SampleData.columns.mail' | translate" [(ngModel)]="items.mail"
+      required>
+  </mat-form-field>
+
+  <mat-dialog-actions>
+    <button type="button" mat-button mat-dialog-close>{{'buttons.cancel' | translate}}</button>
+    <button type="submit" mat-button [disabled]="!dialogForm.form.valid"> {{'buttons.save' | translate}} </button>
+  </mat-dialog-actions>
+</form>
