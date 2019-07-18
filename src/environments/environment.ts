@@ -5,7 +5,7 @@ export const environment: {
   security: 'csrf' | 'jwt';
 } = {
   production: false,
-  restPathRoot: 'http://localhost:8081/',
-  restServiceRoot: 'http://localhost:8081/services/rest/',
+  restPathRoot: 'http://localhost:8080/',
+  restServiceRoot: 'http://localhost:8080/services/rest/',
   security: 'csrf',
 };

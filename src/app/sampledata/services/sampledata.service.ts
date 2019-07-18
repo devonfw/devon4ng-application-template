@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { SearchCriteria } from '../../core/interfaces/search-criteria';
+import { Sort } from '../../core/interfaces/sort';
 
 @Injectable()
 export class SampleDataService {
@@ -13,7 +14,7 @@ export class SampleDataService {
     size: number,
     page: number,
     searchTerms: any,
-    sort: any[],
+    sort: Sort[],
   ): Observable<any> {
     const searchCriteria: SearchCriteria = {
       pageable: {

@@ -53,7 +53,7 @@ export class SampleDataGridComponent implements OnInit {
   ];
   displayedColumns: string[] = ['select', 'name', 'surname', 'age', 'mail'];
   pageSize: number = 8;
-  pageSizes: number[] = [8, 16, 24];
+  pageSizes: string[] = ['8', '16', '24'];
   selectedRow: any;
   dialogRef: MatDialogRef<SampleDataDialogComponent>;
   totalItems: number;
@@ -140,7 +140,9 @@ export class SampleDataGridComponent implements OnInit {
     this.getSampleData();
   }
   checkboxLabel(row?: any): string {
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    return `${
+      this.selection.isSelected(row) ? 'deselect' : 'select'
+    } row ${row.position + 1}`;
   }
   openDialog(): void {
     this.dialogRef = this.dialog.open(SampleDataDialogComponent);
@@ -152,22 +154,25 @@ export class SampleDataGridComponent implements OnInit {
             this.getSampleData();
           },
           (error: any) => {
-            this.dialog.open(SampleDataAlertComponent, {
-              width: '400px',
-              data: {
-                confirmDialog: false,
-                message: this.getTranslation(error.message),
-                title: this.getTranslation('sampledatamanagement.alert.title'),
-                cancelButton: this.getTranslation('CLOSE'),
-              },
-            })
-            .afterClosed()
-            .subscribe((accept: boolean) => {
-              if (accept) {
-                this.authService.setLogged(false);
-                this.router.navigate(['/login']);
-              }
-            });
+            this.dialog
+              .open(SampleDataAlertComponent, {
+                width: '400px',
+                data: {
+                  confirmDialog: false,
+                  message: this.getTranslation(error.message),
+                  title: this.getTranslation(
+                    'sampledatamanagement.alert.title',
+                  ),
+                  cancelButton: this.getTranslation('CLOSE'),
+                },
+              })
+              .afterClosed()
+              .subscribe((accept: boolean) => {
+                if (accept) {
+                  this.authService.setLogged(false);
+                  this.router.navigate(['/login']);
+                }
+              });
           },
         );
       }
@@ -175,7 +180,9 @@ export class SampleDataGridComponent implements OnInit {
   }
   selectEvent(row: any): void {
     this.selection.toggle(row);
-    this.selection.isSelected(row) ? (this.selectedRow = row) : (this.selectedRow = undefined);
+    this.selection.isSelected(row)
+      ? (this.selectedRow = row)
+      : (this.selectedRow = undefined);
   }
   openEditDialog(): void {
     this.dialogRef = this.dialog.open(SampleDataDialogComponent, {
@@ -189,12 +196,15 @@ export class SampleDataGridComponent implements OnInit {
             this.selectedRow = undefined;
           },
           (error: any) => {
-              this.dialog.open(SampleDataAlertComponent, {
+            this.dialog
+              .open(SampleDataAlertComponent, {
                 width: '400px',
                 data: {
                   confirmDialog: false,
                   message: this.getTranslation(error.message),
-                  title: this.getTranslation('sampledatamanagement.alert.title'),
+                  title: this.getTranslation(
+                    'sampledatamanagement.alert.title',
+                  ),
                   cancelButton: this.getTranslation('CLOSE'),
                 },
               })
@@ -211,49 +221,53 @@ export class SampleDataGridComponent implements OnInit {
     });
   }
   openConfirm(): void {
-    this.dialog.open(SampleDataAlertComponent, {
-      width: '400px',
-      data: {
-        confirmDialog: true,
-        message: this.getTranslation('sampledatamanagement.alert.message'),
-        title: this.getTranslation('sampledatamanagement.alert.title'),
-        cancelButton: this.getTranslation(
-          'sampledatamanagement.alert.cancelBtn',
-        ),
-        acceptButton: this.getTranslation(
-          'sampledatamanagement.alert.acceptBtn',
-        ),
-      },
-    })
-    .afterClosed()
-    .subscribe((accept: boolean) => {
-      if (accept) {
-        this.dataGridService.deleteSampleData(this.selectedRow.id).subscribe(
-          () => {
-            this.getSampleData();
-            this.selectedRow = undefined;
-          },
-          (error: any) => {
-            this.dialog.open(SampleDataAlertComponent, {
-                width: '400px',
-                data: {
-                  confirmDialog: false,
-                  message: this.getTranslation(error.message),
-                  title: this.getTranslation('sampledatamanagement.alert.title'),
-                  cancelButton: this.getTranslation('CLOSE'),
-                },
-              })
-              .afterClosed()
-              .subscribe((acceptance: boolean) => {
-                if (acceptance) {
-                  this.authService.setLogged(false);
-                  this.router.navigate(['/login']);
-                }
-              });
-          },
-        );
-      }
-    });
+    this.dialog
+      .open(SampleDataAlertComponent, {
+        width: '400px',
+        data: {
+          confirmDialog: true,
+          message: this.getTranslation('sampledatamanagement.alert.message'),
+          title: this.getTranslation('sampledatamanagement.alert.title'),
+          cancelButton: this.getTranslation(
+            'sampledatamanagement.alert.cancelBtn',
+          ),
+          acceptButton: this.getTranslation(
+            'sampledatamanagement.alert.acceptBtn',
+          ),
+        },
+      })
+      .afterClosed()
+      .subscribe((accept: boolean) => {
+        if (accept) {
+          this.dataGridService.deleteSampleData(this.selectedRow.id).subscribe(
+            () => {
+              this.getSampleData();
+              this.selectedRow = undefined;
+            },
+            (error: any) => {
+              this.dialog
+                .open(SampleDataAlertComponent, {
+                  width: '400px',
+                  data: {
+                    confirmDialog: false,
+                    message: this.getTranslation(error.message),
+                    title: this.getTranslation(
+                      'sampledatamanagement.alert.title',
+                    ),
+                    cancelButton: this.getTranslation('CLOSE'),
+                  },
+                })
+                .afterClosed()
+                .subscribe((acceptance: boolean) => {
+                  if (acceptance) {
+                    this.authService.setLogged(false);
+                    this.router.navigate(['/login']);
+                  }
+                });
+            },
+          );
+        }
+      });
   }
 
   filter(): void {
