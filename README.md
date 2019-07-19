@@ -1,6 +1,6 @@
-# Oasp4jsNewTemplate
+# devon4ng Application Template
 
-This project has been updated to **Angular 6** and uses the [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+This project has been updated to **Angular 8** and uses the [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
 ## Development server
 

@@ -4,8 +4,8 @@ export const environment: {
   restServiceRoot: string;
   security: 'csrf' | 'jwt';
 } = {
-  production: true,
-  restPathRoot: 'http://localhost:8081/demo-server/',
-  restServiceRoot: 'http://localhost:8081/demo-server/services/rest/',
+  production: false,
+  restPathRoot: 'http://localhost:8080/',
+  restServiceRoot: 'http://localhost:8080/services/rest/',
   security: 'csrf',
 };

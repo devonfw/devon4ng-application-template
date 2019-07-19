@@ -11,10 +11,37 @@
     "close": "Cerrar"
   },
   "LIKE": "ME GUSTA",
+  "sampledatamanagement": {
+    "alert": {
+      "acceptBtn": "Sí, Eliminar",
+      "cancelBtn": "No, Cancelar",
+      "title": "Confirmación",
+      "message": "¿Seguro que deseas eliminar esta fila?"
+    },
+    "SampleData": {
+      "navDataSubDescription": "SampleData_EN_Descripción",
+      "navDataSub": "SampleData_ES",
+      "columns": {
+        "mail": "Mail_ES",
+        "surname": "Surname_ES",
+        "name": "Name_ES",
+        "age": "Age_ES"
+      },
+      "subtitle": "SampleData_ES_Descripción",
+      "title": "SampleData_ES_Grid",
+      "navData": "SampleData_ES"
+    },
+    "subtitle": "SampleData_ES_Descripción",
+    "editTitle": "Editar fila existente",
+    "title": "SampleData_ES_Tabla",
+    "addtitle": "Añadir nueva fila",
+    "searchTip": "Panel de búsqueda",
+    "sortTip": "Limpiar Ordenación"
+  },
   "example description": "Descripción de Ejemplo",
   "header": {
     "EN": "Inglés",
-    "title": "OASP4JS",
+    "title": "devon4ng",
     "error": "Error de acceso",
     "ES": "Español"
   },
