@@ -24,7 +24,7 @@
     "@angular/router": "~8.2.11",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
-    "core-js": "^2.5.4",
+    "core-js": "^3.4.1",
     "hammerjs": "^2.0.8",
     "intl": "^1.2.5",
     "material-ui-country-flags": "^3.0.1",
