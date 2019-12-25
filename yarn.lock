@@ -946,6 +946,19 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@nestjsx/crud-request@^4.2.0":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@nestjsx/crud-request/-/crud-request-4.3.3.tgz#80bfe3bec3c5a614f6f33a1939086cbad148380b"
+  integrity sha512-O/tY+zY8jJEU8kdQrfHya9VJgnP79hNI80ZAqJRqTAEc+05a8g26YcB3rmrIUjV9CdKNSUVdpQZRTj+TB0EZjQ==
+  dependencies:
+    "@nestjsx/util" "^4.3.3"
+    qs "^6.8.0"
+
+"@nestjsx/util@^4.3.3":
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@nestjsx/util/-/util-4.3.3.tgz#334ecc6caedbb88d8273b0ad2646347e93d3bd02"
+  integrity sha512-c3jVlvIAZQbTixZ6c0yD/DSh3ujrQrRpl6JojGG+0IjjBavYAF8FJk11LVTZ0F7ZC/cbKGg8jrNvfG++l8o+7A==
+
 "@ngtools/webpack@8.3.12":
   version "8.3.12"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.3.12.tgz#4b4a80175dadc2e03048c60dab46ed6bbeb89eff"
@@ -2669,10 +2682,10 @@ core-js@^2.2.0, core-js@^2.4.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.1.tgz#ae6874dc66937789b80754ff5428df66819ca50b"
   integrity sha1-rmh03GaTd4m4B1T/VCjfZoGcpQs=
 
-core-js@^2.5.4:
-  version "2.5.7"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
-  integrity sha512-RszJCAxg/PP6uzXVXL6BsxSXx/B05oJAQ2vkJRjyjrEcNVycaqOmNb5OTxZPE3xa5gwZduqza6L9JOCenh/Ecw==
+core-js@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.1.tgz#39d5e2e346258cc01eb7d44345b1c3c014ca3f05"
+  integrity sha512-186WjSik2iTGfDjfdCZAxv2ormxtKgemjC3SI6PL31qOA0j5LhTDVjHChccoc7brwLvpvLPiMyRlcO88C4l1QQ==
 
 core-js@~2.3.0:
   version "2.3.0"
@@ -6618,6 +6631,11 @@ qs@6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
+
+qs@^6.8.0:
+  version "6.9.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.1.tgz#20082c65cb78223635ab1a9eaca8875a29bf8ec9"
+  integrity sha512-Cxm7/SS/y/Z3MHWSxXb8lIFqgqBowP5JMlTUFyJN88y0SGQhVmZnqFK/PeuMX9LzUyWsqqhNxIyg0jlzq946yA==
 
 qs@~6.5.2:
   version "6.5.2"
