@@ -1,7 +1,7 @@
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { TranslocoService, AvailableLangs } from '@ngneat/transloco';
 import { AuthService } from '../../core/security/auth.service';
-import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from '../../core/security/login.service';
 
 @Component({
@@ -10,15 +10,22 @@ import { LoginService } from '../../core/security/login.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Input() sideNavOpened: boolean = false;
+  currentLanguage: string;
+  langs: AvailableLangs;
+  @Input() sideNavOpened = false;
   @Output() toggle: EventEmitter<any> = new EventEmitter();
 
   constructor(
     public router: Router,
-    private translate: TranslateService,
+    private translocoService: TranslocoService,
     private auth: AuthService,
     private loginService: LoginService,
-  ) {}
+  ) {
+    this.langs = translocoService.getAvailableLangs();
+    translocoService.langChanges$.subscribe(
+      lang => (this.currentLanguage = lang),
+    );
+  }
 
   toggleSideNav(): void {
     this.sideNavOpened = !this.sideNavOpened;
@@ -26,11 +33,7 @@ export class HeaderComponent {
   }
 
   toggleLanguage(option: string): void {
-    this.translate.use(option);
-  }
-
-  isCurrentLang(lang: string): boolean {
-    return this.translate.currentLang !== lang;
+    this.translocoService.setActiveLang(option);
   }
 
   isLogged(): boolean {

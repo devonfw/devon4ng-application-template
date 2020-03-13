@@ -23,7 +23,7 @@
       "navDataSubDescription": "SampleData_EN_Description",
       "navDataSub": "SampleData_EN",
       "columns": {
-        "mail": "Mail_EN",
+        "email": "Email_EN",
         "surname": "Surname_EN",
         "name": "Name_EN",
         "age": "Age_EN"

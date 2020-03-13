@@ -24,8 +24,8 @@
                 (click)="close()"
               >
                 <mat-icon matListAvatar>home</mat-icon>
-                <h3 matLine>{{ 'home' | translate }}</h3>
-                <p matLine class="desc">{{ 'description' | translate }}</p>
+                <h3 matLine>{{ 'home' | transloco }}</h3>
+                <p matLine class="desc">{{ 'description' | transloco }}</p>
               </a>
               <a
                 id="sampleData"
@@ -35,10 +35,10 @@
               >
                 <mat-icon matListAvatar>grid_on</mat-icon>
                 <h3 matLine>
-                  {{ 'sampledatamanagement.SampleData.navData' | translate }}
+                  {{ 'sampledatamanagement.SampleData.navData' | transloco }}
                 </h3>
                 <p matLine class="desc">
-                  {{ 'sampledatamanagement.SampleData.navDataSub' | translate }}
+                  {{ 'sampledatamanagement.SampleData.navDataSub' | transloco }}
                 </p>
               </a>
             </mat-nav-list>
@@ -49,8 +49,8 @@
                 <router-outlet></router-outlet>
               </div>
               <mat-toolbar class="public-footer">
-                <span>DevonFW Application</span>
-                <span>Devonfw</span>
+                <span>devonfw Application</span>
+                <span>devonfw</span>
               </mat-toolbar>
             </div>
           </mat-sidenav-content>

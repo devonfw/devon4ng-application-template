@@ -10,4 +10,4 @@ Steps to reproduce (In case of bug)
 
 Description of issue / expected enhacement /Comments
 
-Your environment - windows/Linux, Devonfw version , component
+Your environment - windows/Linux, devonfw version , component

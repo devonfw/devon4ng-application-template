@@ -4,17 +4,14 @@
   </mat-toolbar>
   <div>
     <mat-card class="login-card">
-      <mat-card-title>{{ 'login.title' | translate }}</mat-card-title>
+      <mat-card-title>{{ 'login.title' | transloco }}</mat-card-title>
       <mat-card-content>
-        <form
-          (ngSubmit)="login(loginForm.form)"
-          #loginForm="ngForm"
-        >
+        <form (ngSubmit)="login(loginForm.form)" #loginForm="ngForm">
           <mat-form-field>
             <input
               matInput
               type="text"
-              [placeholder]="'login.username' | translate"
+              [placeholder]="'login.username' | transloco"
               ngModel
               name="username"
               required
@@ -25,7 +22,7 @@
             <input
               matInput
               type="password"
-              [placeholder]="'login.password' | translate"
+              [placeholder]="'login.password' | transloco"
               ngModel
               name="password"
               required
@@ -38,14 +35,14 @@
             type="submit"
             [disabled]="!loginForm.form.valid"
           >
-            {{ 'buttons.submit' | translate }}
+            {{ 'buttons.submit' | transloco }}
           </button>
         </form>
       </mat-card-content>
     </mat-card>
   </div>
   <mat-toolbar class="public-footer">
-    <span>DevonFW Application</span>
-    <span>Devonfw</span>
+    <span>devonfw Application</span>
+    <span>devonfw</span>
   </mat-toolbar>
 </div>

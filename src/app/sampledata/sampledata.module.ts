@@ -1,17 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { CoreModule } from '../core/core.module';
-import { TranslateModule } from '@ngx-translate/core';
-
+import { SampleDataAlertComponent } from './sampledata-alert/sampledata-alert.component';
+import { SampleDataDialogComponent } from './sampledata-dialog/sampledata-dialog.component';
+import { SampleDataGridComponent } from './sampledata-grid/sampledata-grid.component';
 import { SampleDataService } from './services/sampledata.service';
 
-import { SampleDataGridComponent } from './sampledata-grid/sampledata-grid.component';
-import { SampleDataDialogComponent } from './sampledata-dialog/sampledata-dialog.component';
-import { SampleDataAlertComponent } from './sampledata-alert/sampledata-alert.component';
-
 @NgModule({
-  imports: [CommonModule, CoreModule, TranslateModule],
-  declarations: [SampleDataGridComponent, SampleDataDialogComponent, SampleDataAlertComponent],
+  imports: [CommonModule, CoreModule],
+  declarations: [
+    SampleDataGridComponent,
+    SampleDataDialogComponent,
+    SampleDataAlertComponent,
+  ],
   entryComponents: [SampleDataDialogComponent, SampleDataAlertComponent],
   providers: [SampleDataService],
 })

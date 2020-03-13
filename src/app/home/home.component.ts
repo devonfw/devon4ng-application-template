@@ -1,7 +1,6 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'public-home',
