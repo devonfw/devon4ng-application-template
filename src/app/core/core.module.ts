@@ -38,7 +38,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CdkTableModule } from '@angular/cdk/table';
-import 'hammerjs';
 
 import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
 import { AuthGuard } from './security/auth-guard.service';
