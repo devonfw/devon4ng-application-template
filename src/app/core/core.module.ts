@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { CdkTableModule } from '@angular/cdk/table';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import {
   HttpClientModule,
   HttpClientXsrfModule,
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -37,13 +36,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { CdkTableModule } from '@angular/cdk/table';
-
-import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { TranslocoRootModule } from '../transloco-root.module';
 import { AuthGuard } from './security/auth-guard.service';
 import { AuthService } from './security/auth.service';
-import { BusinessOperationsService } from './shared/business-operations.service';
+import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
 import { LoginService } from './security/login.service';
+import { BusinessOperationsService } from './shared/business-operations.service';
 
 @NgModule({
   imports: [
@@ -87,6 +87,7 @@ import { LoginService } from './security/login.service';
     MatToolbarModule,
     MatTooltipModule,
     CdkTableModule,
+    TranslocoRootModule,
   ],
   declarations: [],
   providers: [

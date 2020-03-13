@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Router } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
 import { environment } from '../../environments/environment';
-import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from '../core/security/auth.service';
 import { LoginService } from '../core/security/login.service';
 
@@ -13,7 +12,7 @@ import { LoginService } from '../core/security/login.service';
 })
 export class LoginComponent {
   constructor(
-    private translate: TranslateService,
+    private translocoService: TranslocoService,
     private loginService: LoginService,
     public authService: AuthService,
     private router: Router,
@@ -43,11 +42,13 @@ export class LoginComponent {
         },
         (err: any) => {
           this.authService.setLogged(false);
-          this.translate.get('login.errorMsg').subscribe((res: string) => {
-            this.snackBar.open(res, 'OK', {
-              duration: 5000,
+          this.translocoService
+            .translate('login.errorMsg')
+            .subscribe((res: string) => {
+              this.snackBar.open(res, 'OK', {
+                duration: 5000,
+              });
             });
-          });
         },
       );
   }

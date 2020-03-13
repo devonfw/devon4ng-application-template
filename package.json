@@ -23,8 +23,7 @@
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
     "@nestjsx/crud-request": "^4.2.0",
-    "@ngx-translate/core": "11.0.1",
-    "@ngx-translate/http-loader": "4.0.0",
+    "@ngneat/transloco": "^2.13.5",
     "core-js": "^2.5.4",
     "intl": "^1.2.5",
     "material-ui-country-flags": "^3.0.1",
@@ -53,5 +52,11 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.7.5"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
   }
 }

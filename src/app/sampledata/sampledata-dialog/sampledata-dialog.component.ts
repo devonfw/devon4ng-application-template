@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'public-sampledata-dialog',
@@ -12,32 +12,36 @@ export class SampleDataDialogComponent {
     name: '',
     surname: '',
     age: '',
-    mail: '',
+    email: '',
   };
 
   constructor(
-    private translate: TranslateService,
+    private translocoService: TranslocoService,
     public dialogRef: MatDialogRef<SampleDataDialogComponent>,
     @Inject(MAT_DIALOG_DATA) dialogData: any,
   ) {
     if (!dialogData) {
-      this.title = this.getTranslation('sampledatamanagement.addTitle');
+      this.title = this.translocoService.translate(
+        'sampledatamanagement.addTitle',
+      );
     } else {
-      this.title = this.getTranslation('sampledatamanagement.editTitle');
+      this.title = this.translocoService.translate(
+        'sampledatamanagement.editTitle',
+      );
       this.items.name = dialogData.name;
       this.items.surname = dialogData.surname;
       this.items.age = dialogData.age;
-      this.items.mail = dialogData.mail;
+      this.items.email = dialogData.email;
       this.items.id = dialogData.id;
       this.items.modificationCounter = dialogData.modificationCounter;
     }
   }
 
-  getTranslation(text: string): string {
+  /* getTranslation(text: string): string {
     let value: string;
-    this.translate.get(text).subscribe((res: any) => {
+    this.translocoService.get(text).subscribe((res: any) => {
       value = res;
     });
     return value;
-  }
+  } */
 }
