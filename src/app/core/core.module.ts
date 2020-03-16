@@ -52,6 +52,7 @@ import { BusinessOperationsService } from './shared/business-operations.service'
     CdkTableModule,
     RouterModule,
     BrowserAnimationsModule,
+    TranslocoRootModule,
   ],
   exports: [
     CommonModule,
