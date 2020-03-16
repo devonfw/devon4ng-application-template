@@ -7,7 +7,7 @@ import { SearchCriteria } from '../../core/interfaces/search-criteria';
 @Injectable()
 export class SampleDataService {
   private urlService: string =
-    environment.restServiceRoot + 'employeemanagement/v1/employee/';
+    environment.restServiceRoot + 'sampledatamanagement/v1/sampledata/';
   constructor(private http: HttpClient) {}
   getSampleData(
     size: number,
