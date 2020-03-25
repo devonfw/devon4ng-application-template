@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 import { SearchCriteria } from '../../core/interfaces/search-criteria';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class SampleDataService {
   private urlService: string =
     environment.restServiceRoot + 'sampledatamanagement/v1/sampledata/';

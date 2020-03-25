@@ -1,43 +1,39 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/security/auth-guard.service';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { InitialPageComponent } from './home/initial-page/initial-page.component';
-import { SampleDataGridComponent } from './sampledata/sampledata-grid/sampledata-grid.component';
+import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 
 const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: '',
-        redirectTo: '/home/initialPage',
-        pathMatch: 'full',
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'initialPage',
-        component: InitialPageComponent,
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'sampleData',
-        component: SampleDataGridComponent,
-        canActivate: [AuthGuard],
-      },
-    ],
-  },
   {
     path: '',
     redirectTo: '/login',
     pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./auth/auth.module').then(m => m.AuthDataModule),
+  },
+  {
+    path: 'home',
+    component: NavBarComponent,
+    canActivateChild: [AuthGuard],
+    children: [
+      {
+        path: 'initial',
+        loadChildren: () =>
+          import('./home/initial-page/initial-page.module').then(
+            m => m.InitialPageModule,
+          ),
+      },
+      {
+        path: 'sampleData',
+        loadChildren: () =>
+          import('./sampledata/sampledata.module').then(
+            m => m.SampleDataModule,
+          ),
+      },
+    ],
   },
   {
     path: '**',

@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
 import { BusinessOperationsService } from '../../core/shared/business-operations.service';
 import { environment } from '../../../environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class LoginService {
   constructor(
     public router: Router,

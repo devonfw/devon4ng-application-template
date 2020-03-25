@@ -29,7 +29,7 @@ export class LoginComponent {
             this.loginService.getCsrf().subscribe((data: any) => {
               this.authService.setToken(data.token);
               this.authService.setLogged(true);
-              this.router.navigate(['/home']);
+              this.router.navigate(['/home/initial']);
             });
           }
 
@@ -37,7 +37,7 @@ export class LoginComponent {
           if (environment.security === 'jwt') {
             this.authService.setToken(res.headers.get('Authorization'));
             this.authService.setLogged(true);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/home/initial']);
           }
         },
         (err: any) => {

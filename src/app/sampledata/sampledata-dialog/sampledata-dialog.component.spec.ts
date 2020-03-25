@@ -7,7 +7,6 @@ import { SampleDataModule } from '../sampledata.module';
 import { SampleDataService } from '../services/sampledata.service';
 import { SampleDataDialogComponent } from './sampledata-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { TranslateModule } from '@ngx-translate/core';
 
 describe('SampleDataDialogComponent', () => {
   let component: SampleDataDialogComponent;
@@ -18,7 +17,6 @@ describe('SampleDataDialogComponent', () => {
       providers: [SampleDataService, HttpClient],
       imports: [
         BrowserAnimationsModule,
-        TranslateModule.forRoot(),
         SampleDataModule,
         HttpClientModule,
         CoreModule,

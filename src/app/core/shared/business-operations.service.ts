@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class BusinessOperationsService {
   public serverPath: string = environment.restServiceRoot;
   public restPath: string = environment.restPathRoot;

@@ -4,16 +4,16 @@ import { CoreModule } from '../core/core.module';
 import { SampleDataAlertComponent } from './sampledata-alert/sampledata-alert.component';
 import { SampleDataDialogComponent } from './sampledata-dialog/sampledata-dialog.component';
 import { SampleDataGridComponent } from './sampledata-grid/sampledata-grid.component';
-import { SampleDataService } from './services/sampledata.service';
+import { SampleDataRoutingModule } from './sampledata-routing.module';
 
 @NgModule({
-  imports: [CommonModule, CoreModule],
+  imports: [CommonModule, CoreModule, SampleDataRoutingModule],
   declarations: [
     SampleDataGridComponent,
     SampleDataDialogComponent,
     SampleDataAlertComponent,
   ],
   entryComponents: [SampleDataDialogComponent, SampleDataAlertComponent],
-  providers: [SampleDataService],
+  providers: [],
 })
 export class SampleDataModule {}
