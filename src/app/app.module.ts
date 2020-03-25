@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './auth/login.component';
 import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
 import { LayoutModule } from './layout/layout.module';
-import { LoginComponent } from './login/login.component';
+import { AuthDataModule } from './auth/auth.module';
 import { SampleDataModule } from './sampledata/sampledata.module';
 
 @NgModule({
@@ -15,10 +15,10 @@ import { SampleDataModule } from './sampledata/sampledata.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    LayoutModule,
     AppRoutingModule,
     CoreModule,
-    HomeModule,
+    AuthDataModule,
+    LayoutModule,
     SampleDataModule,
     HttpClientModule,
   ],

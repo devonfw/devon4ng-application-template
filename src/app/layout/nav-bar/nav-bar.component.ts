@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'public-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'public-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.scss'],
 })
-export class HomeComponent {
-  sideNavOpened: boolean = false;
+export class NavBarComponent {
+  sideNavOpened = false;
   isMobile: any;
   constructor(private router: Router, private breakpoint: BreakpointObserver) {
     this.breakpoint.observe(Breakpoints.Handset).subscribe((data: any) => {

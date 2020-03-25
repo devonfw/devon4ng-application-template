@@ -36,14 +36,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { TranslocoRootModule } from '../transloco-root.module';
-import { AuthGuard } from './security/auth-guard.service';
-import { AuthService } from './security/auth.service';
-import { HttpRequestInterceptorService } from './security/httpRequestInterceptor.service';
-import { LoginService } from './security/login.service';
-import { BusinessOperationsService } from './shared/business-operations.service';
+import { HttpRequestInterceptorService } from './security/http-request-interceptor.service';
 
 @NgModule({
   imports: [
@@ -51,7 +46,6 @@ import { BusinessOperationsService } from './shared/business-operations.service'
     HttpClientXsrfModule,
     CdkTableModule,
     RouterModule,
-    BrowserAnimationsModule,
     TranslocoRootModule,
   ],
   exports: [
@@ -92,10 +86,6 @@ import { BusinessOperationsService } from './shared/business-operations.service'
   ],
   declarations: [],
   providers: [
-    AuthGuard,
-    LoginService,
-    AuthService,
-    BusinessOperationsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpRequestInterceptorService,
