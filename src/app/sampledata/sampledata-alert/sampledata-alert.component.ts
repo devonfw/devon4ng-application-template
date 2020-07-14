@@ -7,12 +7,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./sampledata-alert.component.scss'],
 })
 export class SampleDataAlertComponent implements OnInit {
-  confirmDialog: boolean = false;
-  message: string = '';
-  title: string = '';
-  cancelButton: string = 'Cancel';
-  acceptButton: string = 'Delete';
-  cancelButtonColor: string = '';
+  confirmDialog = false;
+  message = '';
+  title = '';
+  cancelButton = 'Cancel';
+  acceptButton = 'Delete';
+  cancelButtonColor = '';
   constructor(
     public dialogRef: MatDialogRef<SampleDataAlertComponent>,
     @Inject(MAT_DIALOG_DATA) private dialogData: any,

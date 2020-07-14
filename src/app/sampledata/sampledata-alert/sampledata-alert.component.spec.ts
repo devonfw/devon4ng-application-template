@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SampleDataAlertComponent } from './sampledata-alert.component';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 describe('SampleDataAlertComponent', () => {
   let component: SampleDataAlertComponent;
@@ -8,7 +9,11 @@ describe('SampleDataAlertComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SampleDataAlertComponent ],
+      declarations: [SampleDataAlertComponent],
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+      ]
     })
     .compileComponents();
   }));
