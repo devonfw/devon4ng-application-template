@@ -2,20 +2,21 @@
     "vsicons.presets.angular": true,
     "typescript.check.tscVersion": true,
     "workbench.colorCustomizations": {
-        "activityBar.background": "#ff1146",
-        "activityBar.activeBackground": "#ff1146",
+        "activityBar.background": "#B02D30",
+        "activityBar.activeBackground": "#B02D30",
         "activityBar.activeBorder": "#156000",
         "activityBar.foreground": "#e7e7e7",
         "activityBar.inactiveForeground": "#e7e7e799",
         "activityBarBadge.background": "#156000",
         "activityBarBadge.foreground": "#e7e7e7",
-        "titleBar.activeBackground": "#dd0031",
+        "titleBar.activeBackground": "#B02D30",
         "titleBar.inactiveBackground": "#dd003199",
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveForeground": "#e7e7e799",
-        "statusBar.background": "#dd0031",
-        "statusBarItem.hoverBackground": "#ff1146",
+        "statusBar.background": "#B02D30",
+        "statusBarItem.hoverBackground": "#B02D30",
         "statusBar.foreground": "#e7e7e7"
     },
-    "peacock.color": "#dd0031"
+    "peacock.color": "#dd0031",
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }

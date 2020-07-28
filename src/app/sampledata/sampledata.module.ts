@@ -13,7 +13,6 @@ import { SampleDataRoutingModule } from './sampledata-routing.module';
     SampleDataDialogComponent,
     SampleDataAlertComponent,
   ],
-  entryComponents: [SampleDataDialogComponent, SampleDataAlertComponent],
   providers: [],
 })
 export class SampleDataModule {}

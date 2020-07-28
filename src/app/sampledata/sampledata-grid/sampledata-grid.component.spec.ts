@@ -1,16 +1,15 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CoreModule } from '../../core/core.module';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { SampleDataService } from '../services/sampledata.service';
-
 import { SampleDataGridComponent } from './sampledata-grid.component';
 
 describe('SampleDataGridComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, CoreModule, TranslateModule.forRoot()],
+      imports: [BrowserAnimationsModule, RouterTestingModule, CoreModule],
       declarations: [SampleDataGridComponent],
       providers: [SampleDataService],
     }).compileComponents();
