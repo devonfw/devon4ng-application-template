@@ -1,6 +1,6 @@
 # devon4ng Application Template
 
-This project has been updated to **Angular 9** and uses the [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+This project has been updated to **Angular 10** and uses the [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
 
 ## Development server
 
