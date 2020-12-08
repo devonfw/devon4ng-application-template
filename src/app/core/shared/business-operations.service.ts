@@ -15,6 +15,6 @@ export class BusinessOperationsService {
     return this.serverPath + 'logout';
   }
   getCsrf(): string {
-    return this.serverPath + 'security/v1/csrftoken';
+    return this.serverPath + 'csrf/v1/token';
   }
 }
