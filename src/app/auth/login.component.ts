@@ -42,13 +42,9 @@ export class LoginComponent {
         },
         (err: any) => {
           this.authService.setLogged(false);
-          this.translocoService
-            .translate('login.errorMsg')
-            .subscribe((res: string) => {
-              this.snackBar.open(res, 'OK', {
-                duration: 5000,
-              });
-            });
+          this.snackBar.open(this.translocoService.translate('login.errorMsg'), 'OK', {
+            duration: 5000,
+          });
         },
       );
   }
