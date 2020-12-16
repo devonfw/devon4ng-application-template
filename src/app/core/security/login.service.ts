@@ -29,7 +29,7 @@ export class LoginService {
 
     // JWT
     if (environment.security === 'jwt') {
-      options = { responseType: 'text', observe: 'response' };
+      options = { observe: 'response' };
     }
 
     return this.http.post(
