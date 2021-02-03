@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { CoreModule } from '../../core/core.module';
 import { SampleDataModule } from '../sampledata.module';
 
@@ -12,7 +12,7 @@ describe('SampleDataDialogComponent', () => {
   let component: SampleDataDialogComponent;
   let dialog: MatDialog;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       providers: [SampleDataService, HttpClient],
       imports: [
