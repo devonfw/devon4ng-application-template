@@ -34,7 +34,7 @@ export class HttpRequestInterceptorService implements HttpInterceptor {
       // JWT
       if (environment.security === 'jwt') {
         authReq = req.clone({
-          setHeaders: { Authorization: authHeader },
+          setHeaders: { authorization: authHeader },
         });
       }
 

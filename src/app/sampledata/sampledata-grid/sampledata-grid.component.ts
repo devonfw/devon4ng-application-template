@@ -12,21 +12,15 @@ import { SampleDataDialogComponent } from '../sampledata-dialog/sampledata-dialo
 import { SampleDataService } from '../services/sampledata.service';
 
 @Component({
-  selector: 'public-sampledata-grid',
+  selector: 'app-sampledata-grid',
   templateUrl: './sampledata-grid.component.html',
   styleUrls: ['./sampledata-grid.component.scss'],
 })
 export class SampleDataGridComponent implements OnInit {
-  currentLanguage: string;
-  langs: AvailableLangs;
-  private pageable: Pageable = {
-    pageSize: 8,
-    pageNumber: 0,
-  };
-  private sorting: any[] = [];
-
   @ViewChild('pagingBar', { static: true })
   pagingBar: MatPaginator;
+  currentLanguage: string;
+  langs: AvailableLangs;
 
   data: any = [];
   columns: any[] = [
@@ -60,6 +54,13 @@ export class SampleDataGridComponent implements OnInit {
     email: undefined,
   };
   selection: SelectionModel<any> = new SelectionModel<any>(false, []);
+
+  private pageable: Pageable = {
+    pageSize: 8,
+    pageNumber: 0,
+  };
+  private sorting: any[] = [];
+
   constructor(
     private translocoService: TranslocoService,
     public dialog: MatDialog,
@@ -119,9 +120,9 @@ export class SampleDataGridComponent implements OnInit {
     this.getSampleData();
   }
   checkboxLabel(row?: any): string {
-    return `${
-      this.selection.isSelected(row) ? 'deselect' : 'select'
-    } row ${row.position + 1}`;
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
+      row.position + 1
+    }`;
   }
   openDialog(): void {
     this.dialogRef = this.dialog.open(SampleDataDialogComponent);
@@ -159,9 +160,7 @@ export class SampleDataGridComponent implements OnInit {
   }
   selectEvent(row: any): void {
     this.selection.toggle(row);
-    this.selection.isSelected(row)
-      ? (this.selectedRow = row)
-      : (this.selectedRow = undefined);
+    this.selectedRow = this.selection.isSelected(row) ? row : undefined;
   }
   openEditDialog(): void {
     this.dialogRef = this.dialog.open(SampleDataDialogComponent, {

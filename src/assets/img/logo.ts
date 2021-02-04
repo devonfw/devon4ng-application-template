@@ -1,4 +1,4 @@
-/*tslint:disable*/
+/* eslint-disable */
 export let logo: string = `
     <?xml version="1.0" encoding="utf-8"?>
         <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->

@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
-  selector: 'public-sampledata-dialog',
+  selector: 'app-sampledata-dialog',
   templateUrl: './sampledata-dialog.component.html',
 })
 export class SampleDataDialogComponent {
