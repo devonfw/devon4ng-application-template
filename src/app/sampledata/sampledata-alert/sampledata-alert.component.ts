@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'public-sampledata-alert',
+  selector: 'app-sampledata-alert',
   templateUrl: './sampledata-alert.component.html',
   styleUrls: ['./sampledata-alert.component.scss'],
 })
@@ -16,7 +16,7 @@ export class SampleDataAlertComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<SampleDataAlertComponent>,
     @Inject(MAT_DIALOG_DATA) private dialogData: any,
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     if (this.dialogData) {
@@ -32,5 +32,4 @@ export class SampleDataAlertComponent implements OnInit {
       }
     }
   }
-
 }

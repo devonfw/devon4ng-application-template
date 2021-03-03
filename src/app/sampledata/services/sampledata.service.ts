@@ -21,7 +21,7 @@ export class SampleDataService {
       pageable: {
         pageSize: size,
         pageNumber: page,
-        sort: sort,
+        sort,
       },
       name: searchTerms.name,
       surname: searchTerms.surname,
@@ -31,7 +31,7 @@ export class SampleDataService {
     return this.http.post<any>(this.urlService + 'search', searchCriteria);
   }
 
-  saveSampleData(data: any): Observable<Object> {
+  saveSampleData(data: any): Observable<unknown> {
     const obj: any = {
       id: data.id,
       modificationCounter: data.modificationCounter,
@@ -42,12 +42,12 @@ export class SampleDataService {
     };
     return this.http.post(this.urlService, obj);
   }
-  deleteSampleData(id: number): Observable<Object> {
+  deleteSampleData(id: number): Observable<unknown> {
     return this.http.delete(this.urlService + id);
   }
-  searchSampleData(criteria: any): Observable<Object> {
+  searchSampleData(criteria: any): Observable<unknown> {
     return this.http.post(this.urlService + 'search', {
-      criteria: criteria,
+      criteria,
     });
   }
 }
