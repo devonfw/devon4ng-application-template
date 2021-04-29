@@ -118,13 +118,33 @@
     rxjs "6.6.3"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@11.1.2", "@angular-devkit/schematics@~11.1.2":
+"@angular-devkit/core@11.2.11":
+  version "11.2.11"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-11.2.11.tgz#f1d879c5a898aefdcba0e88ed52d31add2e370c5"
+  integrity sha512-6gFrpG0o00Y4kMU7cQeQ5fSlmXRvNlidylM3OfAvpj0qHoRKo1E3q9iVr4fW3oVZxK3fpCSN7RE5Myl5Y7mV0w==
+  dependencies:
+    ajv "6.12.6"
+    fast-json-stable-stringify "2.1.0"
+    magic-string "0.25.7"
+    rxjs "6.6.3"
+    source-map "0.7.3"
+
+"@angular-devkit/schematics@11.1.2":
   version "11.1.2"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-11.1.2.tgz#454ad37cc6d28520336ac7ebfe4f2644dc3050bd"
   integrity sha512-wIWI4+EPsjbN+23Rs0zE4GarKrUm8gMR3MpGAtlEmGG2ZsXEVdfiKUebBdWGrx0sEfgLN9JfePbZQFvqN5ifyw==
   dependencies:
     "@angular-devkit/core" "11.1.2"
     ora "5.2.0"
+    rxjs "6.6.3"
+
+"@angular-devkit/schematics@~11.2.11":
+  version "11.2.11"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-11.2.11.tgz#bd89c5004dc4a044dedc49ba5f72031a52be0614"
+  integrity sha512-xkw+5P9V7VdV/X3Eko0/oZmEqelenIT1RdaOlFA3ZLCdT6bz+79HjeChMy++JcLjVNRcLYQSw0ULByq2q/S2Pw==
+  dependencies:
+    "@angular-devkit/core" "11.2.11"
+    ora "5.3.0"
     rxjs "6.6.3"
 
 "@angular-eslint/builder@1.1.0":
@@ -7538,6 +7558,20 @@ ora@5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ora/-/ora-5.2.0.tgz#de10bfd2d15514384af45f3fa9d9b1aaf344fda1"
   integrity sha512-+wG2v8TUU8EgzPHun1k/n45pXquQ9fHnbXVetl9rRgO6kjZszGGbraF3XPTIdgeA+s1lbRjSEftAnyT0w8ZMvQ==
+  dependencies:
+    bl "^4.0.3"
+    chalk "^4.1.0"
+    cli-cursor "^3.1.0"
+    cli-spinners "^2.5.0"
+    is-interactive "^1.0.0"
+    log-symbols "^4.0.0"
+    strip-ansi "^6.0.0"
+    wcwidth "^1.0.1"
+
+ora@5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/ora/-/ora-5.3.0.tgz#fb832899d3a1372fe71c8b2c534bbfe74961bb6f"
+  integrity sha512-zAKMgGXUim0Jyd6CXK9lraBnD3H5yPGBPPOkC23a2BG6hsm4Zu6OQSjQuEtV0BHDf4aKHcUFvJiGRrFuW3MG8g==
   dependencies:
     bl "^4.0.3"
     chalk "^4.1.0"
