@@ -1595,10 +1595,10 @@
     cosmiconfig "6.0.0"
     tslib "^1.9.0"
 
-"@ngneat/transloco@^2.20.0":
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/@ngneat/transloco/-/transloco-2.20.0.tgz#0d8b820ff527e0a1469c38b6104dba11b2d8312b"
-  integrity sha512-SIySXxZpiYmEGRMt7XJqV1yNJj6Om1vGNbAOrLjfRTjgbyw8He76k7CJHn6nb57VRF31ATkIX4wgwHlrxpPd7A==
+"@ngneat/transloco@^2.22.0":
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/@ngneat/transloco/-/transloco-2.22.0.tgz#9fae1e97b211b8c8b658d50a0fe4e9c29c23f29e"
+  integrity sha512-mJ8KVm3nPoSyKlMqsP4D3nNClugwnwxmVrP3QtO16jEiLn8U0ipsAlj7SyQqjIWKSLxxVZuJX25lmk6Ye9iYoA==
   dependencies:
     "@ngneat/transloco-utils" "^1.0.6"
     flat "5.0.2"
@@ -6148,13 +6148,6 @@ loglevel@^1.6.8:
   version "1.6.8"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.8.tgz#8a25fb75d092230ecd4457270d80b54e28011171"
   integrity sha512-bsU7+gc9AJ2SqpzxwU3+1fedl8zAntbtC5XYlt3s2j1hJcn2PsXSmgN8TaLG/J1/2mod4+cE/3vNL70/c1RNCA==
-
-lru-cache@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-5.1.1.tgz#1da27e6710271947695daf6848e847f01d84b920"
-  integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
-  dependencies:
-    yallist "^3.0.2"
 
 lru-cache@^6.0.0:
   version "6.0.0"
