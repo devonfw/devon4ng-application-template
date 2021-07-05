@@ -142,10 +142,10 @@
     ora "5.4.1"
     rxjs "6.6.7"
 
-"@angular-eslint/builder@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@angular-eslint/builder/-/builder-1.1.0.tgz#91b355b73a503929ba66ef03017718510eea8a2c"
-  integrity sha512-VXQY+lLqN7KqqyoV/p5avp1qxavtspy3266QetMzy6Dh+6BYWznA3YPO8TMgEG/JwpFLXuLBdc8YUg8hVeZCcA==
+"@angular-eslint/builder@12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@angular-eslint/builder/-/builder-12.2.0.tgz#75b39e5b2ef380c59de3f45f3f77dae177807f09"
+  integrity sha512-AlVe8VcJr9d/BohtHvAyxn3pyVGE9o0g3BqnmthQl6+g5G/WZ5SH5CyQlPF6ycyMbxuHuICgVBbIK9jedZxM1A==
 
 "@angular-eslint/eslint-plugin-template@1.1.0":
   version "1.1.0"
@@ -6148,13 +6148,6 @@ loglevel@^1.6.8:
   version "1.6.8"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.8.tgz#8a25fb75d092230ecd4457270d80b54e28011171"
   integrity sha512-bsU7+gc9AJ2SqpzxwU3+1fedl8zAntbtC5XYlt3s2j1hJcn2PsXSmgN8TaLG/J1/2mod4+cE/3vNL70/c1RNCA==
-
-lru-cache@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-5.1.1.tgz#1da27e6710271947695daf6848e847f01d84b920"
-  integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
-  dependencies:
-    yallist "^3.0.2"
 
 lru-cache@^6.0.0:
   version "6.0.0"
