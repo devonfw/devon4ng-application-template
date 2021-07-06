@@ -46,7 +46,7 @@
     "@types/jasminewd2": "~2.0.9",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.3.0",
-    "@typescript-eslint/parser": "4.3.0",
+    "@typescript-eslint/parser": "4.28.2",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "35.4.1",
