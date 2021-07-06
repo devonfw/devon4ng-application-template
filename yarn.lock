@@ -1619,10 +1619,10 @@
     cosmiconfig "6.0.0"
     tslib "^1.9.0"
 
-"@ngneat/transloco@^2.20.0":
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/@ngneat/transloco/-/transloco-2.20.0.tgz#0d8b820ff527e0a1469c38b6104dba11b2d8312b"
-  integrity sha512-SIySXxZpiYmEGRMt7XJqV1yNJj6Om1vGNbAOrLjfRTjgbyw8He76k7CJHn6nb57VRF31ATkIX4wgwHlrxpPd7A==
+"@ngneat/transloco@^2.22.0":
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/@ngneat/transloco/-/transloco-2.22.0.tgz#9fae1e97b211b8c8b658d50a0fe4e9c29c23f29e"
+  integrity sha512-mJ8KVm3nPoSyKlMqsP4D3nNClugwnwxmVrP3QtO16jEiLn8U0ipsAlj7SyQqjIWKSLxxVZuJX25lmk6Ye9iYoA==
   dependencies:
     "@ngneat/transloco-utils" "^1.0.6"
     flat "5.0.2"
