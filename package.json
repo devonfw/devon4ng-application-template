@@ -1,6 +1,6 @@
 {
   "name": "devon4ng-application-template",
-  "version": "11.1.1",
+  "version": "12.1.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
