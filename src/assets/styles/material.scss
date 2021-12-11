@@ -1,6 +1,6 @@
-@use '~@angular/material' as mat;
+@use '@angular/material' as mat;
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import '~@angular/material/theming';
+@import '@angular/material/theming';
 
 // Define a custom typography config that overrides the font-family
 // or any typography level.
