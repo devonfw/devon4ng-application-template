@@ -24,7 +24,7 @@
     "@angular/router": "~13.1.0",
     "@nestjsx/crud-request": "^4.2.0",
     "@ngneat/transloco": "^3.1.4",
-    "core-js": "^2.5.4",
+    "core-js": "^3.21.0",
     "intl": "^1.2.5",
     "material-ui-country-flags": "^3.0.1",
     "rxjs": "~6.6.7",
